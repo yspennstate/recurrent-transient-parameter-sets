@@ -7,7 +7,7 @@
 \usepackage{hyperref}
 \usepackage[nameinlink,noabbrev]{cleveref}
 
-\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,pdftitle={Topology of the recurrent and transient parameter sets of random walks on abelian groups},pdfauthor={Yitzchak Shmalo}}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -35,16 +35,17 @@ Givat Ram, Jerusalem, Israel}
 \maketitle
 
 \begin{abstract}
-Fix a finitely generated abelian group and a finite set $S$ of steps, and let $R$ be the set of probability vectors on $S$
-whose homogeneous random walk is recurrent. Li, Mossel and Weiss characterized $R$ and asked when $R$ is simply
-connected and when its complement $R^c$ is path connected, simply connected or convex. We answer these questions. When no
-step projects to zero in the free part of the group, $R$ is homotopy equivalent to a finite bipartite graph: its vertices
+Fix a finitely generated abelian group and a finite set $S$ of steps, and let $R$ be the set of laws on $S$, that is,
+probability vectors, whose homogeneous random walk is recurrent. Li, Mossel and Weiss characterized $R$ and asked when
+$R$ is simply connected and when its complement $R^c$ is path connected, simply connected or convex. When no step
+projects to zero in the free part of the group, $R$ is homotopy equivalent to a finite bipartite graph. Its vertices
 are the lines through the origin that contain projections of steps on both sides of the origin and the planes spanned
-by the projections of the steps charged by some recurrent law, and its edges are the inclusions of a line in a plane. This gives its path components and the ranks of their fundamental groups, and shows that $R$ is
-simply connected only when it is contractible. The complement $R^c$ is empty, contractible, homotopy equivalent to two
-points, or homotopy equivalent to a circle, according to the rank of the projections of the steps and whether the origin
-is in the relative interior of their convex hull. Finally, $R^c$ is convex exactly when no two or three nonzero
-projections of steps have a vanishing positive combination.
+by the projections of the steps in the support of some recurrent law, and its edges are the inclusions of a line in a
+plane. This gives the path components of $R$ and the ranks of their fundamental groups, and shows that $R$ is simply
+connected if and only if it is contractible. The complement $R^c$ is empty, contractible, homotopy equivalent to two
+points, or homotopy equivalent to a circle, according to the dimension of the span of the projections of the steps and
+whether the origin is in the relative interior of their convex hull. The set $R^c$ is convex exactly when no two or
+three nonzero projections of steps have a vanishing positive combination.
 \end{abstract}
 
 \noindent\textit{Keywords:} random walk, recurrence, abelian group, nerve theorem, homotopy type.\\
@@ -57,61 +58,76 @@ $a$ of the simplex
 \[
 A=\Bigl\{a\in\R^m:\ a_i\ge 0,\ \sum_{i=1}^m a_i=1\Bigr\}
 \]
-defines the homogeneous random walk on $G$ that moves from $g$ to $g+s_i$ with probability $a_i$; we call the points of
-$A$ \emph{laws}, and write $e_i\in A$ for the point mass at $s_i$ (in the examples, step sets are written in the
-standard basis $e_1,\dots,e_d$ of $\Z^d$; which is meant is clear from the space). Since all states of
-such a walk have the same type, the walk is either recurrent or transient even when $S$ does not generate $G$. Li,
-Mossel and Weiss \cite[Section~6]{LMW} study the parameter set $R\subseteq A$ of recurrent walks and the
-parameter set $R^c=A\setminus R$ of transient ones. They prove that $R$ is closed \cite[Theorem~6.2]{LMW}, that $R$ is path connected when $S$ is
-symmetric \cite[Theorem~6.3]{LMW}, and they characterize convexity of $R$ \cite[Theorem~6.5, Corollary~6.6]{LMW}. On the
-transient side they show that $R^c$ is path connected when some transient law has zero drift
-\cite[Theorem~6.9, Corollary~6.10]{LMW}, observe that for $S=\{\pm e_1,\pm e_2\}\subseteq\Z^2$ the set $R^c$ is path
-connected but not simply connected, and show that $R^c$ is not convex for symmetric $S$ with a nonzero projection
-\cite[Proposition~6.12]{LMW}.
-After their Example~6.4, a five-step set in $\Z^3$ with disconnected $R$, they leave open the classification of path
-connectedness of $R$ for nonsymmetric $S$, and they pose:
-\begin{itemize}[nosep]
-\item Question~6.7: when is $R$ simply connected?
-\item Question~6.8: when is $R^c$ path connected?
-\item Question~6.11: when is $R^c$ simply connected?
-\item Question~6.13: when is $R^c$ convex?
-\end{itemize}
-We answer these questions for every $G$ and every finite $S$. Throughout, $G=\Z^n\times H$ with $H$ finite,
-$\pi\colon G\to\Z^n$ is the projection, $v_i=\pi(s_i)$, and
+defines the homogeneous random walk on $G$ that moves from $g$ to $g+s_i$ with probability $a_i$. We call the points of
+$A$ \emph{laws}, and write $\delta_i\in A$ for the point mass at $s_i$; in the examples, $e_1,\dots,e_d$ is the
+standard basis of $\Z^d$. Since all states of such a walk have the same type, the walk is either recurrent or transient
+even when $S$ does not generate $G$.
+
+Throughout, $G=\Z^n\times H$ with $H$ finite, $\pi\colon G\to\Z^n$ is the projection onto the free part, $v_i=\pi(s_i)$
+is the \emph{projection} of the step $s_i$, and
 \[
 D(a)=\sum_{i=1}^m a_i v_i,\qquad T_a=\{v_i: a_i>0\},
 \]
 \[
 r=\dim\spn\{v_1,\dots,v_m\},\qquad K=\conv\{v_1,\dots,v_m\}.
 \]
-Distinct steps may have the same projection, and a projection may be zero. A law $a$ has \emph{zero drift} if
-$D(a)=0$. The probabilistic input is the
-characterization of Li, Mossel and Weiss.
+Distinct steps may have the same projection, and a projection may be zero. We call $D(a)$ the \emph{drift} of the law
+$a$, and say that $a$ has \emph{zero drift} if $D(a)=0$. A law $a$ is \emph{supported on} a set $J$ of indices if
+$a_i=0$ for $i\notin J$. The step set $S$ is \emph{symmetric} if $S=-S$. A set $X$ is \emph{star shaped} about a point
+$c\in X$ if it contains the segment from $c$ to each of its points; $c$ is then a \emph{star centre} of $X$.
+
+Li, Mossel and Weiss \cite[Section~6]{LMW} study the parameter set $R\subseteq A$ of recurrent laws and the parameter
+set $R^c=A\setminus R$ of transient ones. They prove that $R$ is closed \cite[Theorem~6.2]{LMW}, that $R$ is path
+connected when $S$ is symmetric \cite[Theorem~6.3]{LMW}, and they characterize convexity of $R$ \cite[Theorem~6.5,
+Corollary~6.6]{LMW}. On the transient side they show that $R^c$ is path connected when some transient law has zero
+drift \cite[Theorem~6.9, Corollary~6.10]{LMW}, observe that for $S=\{\pm e_1,\pm e_2\}\subseteq\Z^2$ the set $R^c$ is
+path connected but not simply connected, and show that $R^c$ is not convex for symmetric $S$ with a nonzero projection
+\cite[Proposition~6.12]{LMW}. After their Example~6.4, a five-step set in $\Z^3$ with $R$ not path connected, they
+leave open the classification of path connectedness of $R$ for nonsymmetric $S$, and they pose:
+\begin{itemize}[nosep]
+\item Question~6.7: when is $R$ simply connected?
+\item Question~6.8: when is $R^c$ path connected?
+\item Question~6.11: when is $R^c$ simply connected?
+\item Question~6.13: when is $R^c$ convex?
+\end{itemize}
+We answer these questions for every $G$ and every finite $S$. The probabilistic input is the characterization of Li,
+Mossel and Weiss.
 
 \begin{proposition}[{\cite[Proposition~6.1]{LMW}}]\label{prop:LMW}
 A law $a\in A$ is recurrent if and only if $\dim\spn T_a\le 2$ and $D(a)=0$.
 \end{proposition}
 
-The proof of \cite[Theorem~6.2]{LMW} writes $R$ as a finite union of polytopes, namely the polytopes $P_W$ of zero-drift laws
-supported on indices with $v_i\in W$, over the subspaces $W$ of dimension at most $2$ (\Cref{lem:pieces}(ii) below).
-Li, Mossel and Weiss remark after their Example~6.4 that an analysis of how the subspaces $\spn T_a$ intersect should
-classify when $R$ is path connected, and before Question~6.8 they state the belief that $R^c$ is path connected aside
-from essentially one-dimensional examples. Their own connectedness results use more than \Cref{prop:LMW}: the proof
-of \cite[Theorem~6.3]{LMW} joins each recurrent law by a segment to a law carried by a pair $\{s,-s\}$, which needs the
-symmetry of $S$, and \cite[Theorem~6.9]{LMW} needs a transient law of zero drift, which exists only if $r\ge 3$. A path
-between two laws also says nothing about loops, and loops occur: for $S=\{\pm e_1,\pm e_2,\pm e_3\}$ the set $R$ is
-path connected and has the homotopy type of a circle, and for $S=\{\pm e_1,\pm e_2\}$ the same holds for $R^c$.
-
-We determine the homotopy types. On the recurrent side the key identity is $P_U\cap P_W=P_{U\cap W}$
-for all subspaces $U,W$ (\Cref{lem:pieces}(i)). When no projection is zero, $P_{\{0\}}$ is empty, and for a line $L$ the polytope $P_L$ is
-nonempty exactly when $L$ contains projections on both sides of the origin. Two distinct polytopes of the cover therefore
-meet in such a $P_L$ or not at all, the nerve of the cover is determined by the inclusions of these lines in the planes
-$\spn T_a$ $(a\in R)$, and the nerve theorem identifies $R$ up to homotopy with a graph. On the transient side, when
-$1\le r\le 2$ the set $R^c$ consists of the laws with nonzero drift. If moreover some law $q$ with all coordinates
-positive has zero drift, choose for each $a\in R^c$ a law $\rho(a)$ near $q$ whose drift is a positive multiple of
-$D(a)$. The segments from $a$ to $\rho(a)$ stay in $R^c$, and they retract $R^c$ onto two points when $r=1$ and onto
-a circle when $r=2$.
-In every other case $R^c$ is empty or star shaped.
+Li, Mossel and Weiss obtain the closedness of $R$ from a decomposition into polytopes
+\cite[proof of Theorem~6.2]{LMW}. For a linear subspace $W\subseteq\R^n$ let
+\[
+P_W=\{a\in A:\ D(a)=0,\ a_i=0\ \text{whenever}\ v_i\notin W\}.
+\]
+By \Cref{prop:LMW}, $R$ is the union of the polytopes $P_W$ over the subspaces $W$ of dimension at most $2$. The
+connectedness theorems of \cite{LMW} use more than this decomposition. The proof of \cite[Theorem~6.3]{LMW} joins each
+recurrent law by a segment to a law supported on a pair $\{s,-s\}$, which requires $S=-S$, and
+\cite[Theorem~6.9]{LMW} assumes a transient law of zero drift, which exists only if $r\ge 3$. Neither argument
+detects loops, and loops occur: for $S=\{\pm e_1,\pm e_2,\pm e_3\}\subseteq\Z^3$ the set $R$ is homotopy equivalent
+to a circle, and for $S=\{\pm e_1,\pm e_2\}\subseteq\Z^2$ the set $R^c$ is. Both homotopy types can be computed in
+general. For $R$, the polytopes satisfy
+\[
+P_U\cap P_W=P_{U\cap W}\qquad\text{for all subspaces } U,W\subseteq\R^n .
+\]
+Suppose no $v_i$ is zero. Then $P_{\{0\}}=\emptyset$, and for a line $L$ the polytope $P_L$ is nonempty exactly when
+$L$ contains two of the $v_i$ on opposite sides of the origin. Hence, for distinct subspaces $U,W$ of dimension at
+most $2$, the intersection $P_U\cap P_W$ is empty or is such a $P_L$. All nonempty intersections are convex, and the
+nerve theorem identifies $R$, up to homotopy, with the graph whose vertices are these lines and the two-dimensional
+subspaces of the form $\spn T_a$, $a\in R$, with an edge for each inclusion of a line in such a subspace
+(\Cref{thm:rec}). For $R^c$, let $1\le r\le 2$, so that
+$R^c=\{a\in A: D(a)\neq 0\}$ by \Cref{prop:LMW}, and suppose that some law with all coordinates positive has zero
+drift. Fix a basis of $\spn\{v_1,\dots,v_m\}$, let $\|\cdot\|$ be the maximum norm in its coordinates and $\Sigma$
+the unit sphere of this norm. There are $\varepsilon>0$ and an embedding $s\colon\Sigma\to A$ with
+$D(s(u))=\varepsilon u$. Put $\rho(a)=s\bigl(D(a)/\|D(a)\|\bigr)$ for $a\in R^c$. Then
+\[
+D\bigl((1-\lambda)a+\lambda\rho(a)\bigr)=\Bigl(1-\lambda+\frac{\lambda\varepsilon}{\|D(a)\|}\Bigr)D(a)\neq 0
+\qquad(0\le\lambda\le 1),
+\]
+so the segments from $a$ to $\rho(a)$ lie in $R^c$ and deform $R^c$ onto $s(\Sigma)$, which is a pair of points when
+$r=1$ and a circle when $r=2$ (\Cref{thm:trans}). In all other cases $R^c$ is empty or star shaped.
 
 We follow \cite{LMW} in
 calling the empty set path connected and convex; statements about simple connectedness and contractibility refer to
@@ -128,16 +144,15 @@ $\Gamma$ is the bipartite graph with vertex set $\mathcal B\cup\mathcal V$ and a
 
 \begin{theorem}\label{thm:rec}
 \begin{enumerate}[label=\textup{(\roman*)},nosep]
-\item If $v_i=0$ for some $i$, then $R$ is star shaped about the point mass $e_i$, hence contractible.
+\item If $v_i=0$ for some $i$, then $R$ is star shaped about the point mass $\delta_i$, hence contractible.
 \item If no $v_i$ is zero, then $R$ is homotopy equivalent to $\Gamma$. Consequently $R$ has exactly
 \begin{equation}\label{eq:comp}
 t+\min(k,1)
 \end{equation}
-path components. For each active plane $V$ with $\mathcal B(V)=\emptyset$ the set $P_V$ of zero-drift laws supported on
-projections in $V$ is a convex component of $R$. If $k>0$, the remaining laws form one component $R_*$, whose
+path components. For each active plane $V$ with $\mathcal B(V)=\emptyset$ the polytope $P_V$ is a convex component of $R$. If $k>0$, the remaining laws form one component $R_*$, whose
 fundamental group is free of rank
 \begin{equation}\label{eq:rank}
-b=1-k+\sum_{V\in\mathcal V,\ \mathcal B(V)\neq\emptyset}\bigl(|\mathcal B(V)|-1\bigr).
+\beta=1-k+\sum_{V\in\mathcal V,\ \mathcal B(V)\neq\emptyset}\bigl(|\mathcal B(V)|-1\bigr).
 \end{equation}
 \end{enumerate}
 \end{theorem}
@@ -156,7 +171,7 @@ This follows from \Cref{thm:rec} and \eqref{eq:comp}, and it is the classificati
 \cite[Example~6.4]{LMW}.
 
 For $S=\{\pm e_1,\dots,\pm e_d\}\subseteq\Z^d$ the balanced lines are the $d$ coordinate axes, the active planes are the
-$\binom d2$ coordinate planes, and \eqref{eq:rank} gives $b=1-d+\binom d2$: the set $R$ is homotopy equivalent to a
+$\binom d2$ coordinate planes, and \eqref{eq:rank} gives $\beta=1-d+\binom d2$: the set $R$ is homotopy equivalent to a
 wedge of $(d-1)(d-2)/2$ circles, a point for $d\le 2$ and a circle for $d=3$. Adding a step with projection zero makes
 $R$ contractible.
 
@@ -171,7 +186,7 @@ Case & $R^c$\\
 \midrule
 $r=0$ & empty\\
 $r\ge 3$ & contractible; every law $b$ with $\dim\spn T_b\ge 3$ is a star centre\\
-$1\le r\le 2$ and $0\notin\relint K$ & contractible; some point mass $e_j$ is a star centre\\
+$1\le r\le 2$ and $0\notin\relint K$ & contractible; some point mass $\delta_j$ is a star centre\\
 $r=1$ and $0\in\relint K$ & two convex components\\
 $r=2$ and $0\in\relint K$ & strong deformation retract onto an embedded circle\\
 \bottomrule
@@ -209,7 +224,7 @@ combination with positive coefficients.
 
 For symmetric $S$ with a nonzero projection, condition (c) fails on the pair $\{v,-v\}$, which recovers
 \cite[Proposition~6.12]{LMW}. For the steps $e_1,e_2,e_3,-(e_1+e_2+e_3)$ in $\Z^3$ condition (c) holds, so $R$ is empty
-and $R^c=A$ is convex, although the walk with uniform law has zero drift.
+and $R^c=A$ is convex, although the uniform law has zero drift.
 
 \Cref{sec:polytopes} describes the polytopes $P_W$ and their vertices, \Cref{sec:rec} computes the nerve of the cover
 of $R$ by them, \Cref{sec:trans} treats $R^c$ by cases on $r$ and on the position of $0$ in $K$, and
@@ -217,11 +232,7 @@ of $R$ by them, \Cref{sec:trans} treats $R^c$ by cases on $r$ and on the positio
 
 \section{Zero-drift polytopes}\label{sec:polytopes}
 
-For a linear subspace $W\subseteq\R^n$ put
-\[
-P_W=\{a\in A:\ D(a)=0,\ a_i=0\text{ whenever }v_i\notin W\},
-\]
-and for an index set $J\subseteq\{1,\dots,m\}$ put $Z_J=\{a\in A:\ \supp a\subseteq J,\ D(a)=0\}$. Each of these sets is a
+Recall the polytopes $P_W$ defined in the introduction. For an index set $J\subseteq\{1,\dots,m\}$ put $Z_J=\{a\in A:\ \supp a\subseteq J,\ D(a)=0\}$. Each of these sets is a
 compact convex polytope, possibly empty.
 
 \begin{lemma}\label{lem:pieces}
@@ -233,7 +244,7 @@ $v_i$.
 \end{lemma}
 
 \begin{proof}
-(i) A law lies in both sets exactly when it has zero drift and gives positive mass only to indices with
+(i) A law lies in both sets exactly when it has zero drift and is supported on the indices with
 $v_i\in U\cap W$. (ii) If $a\in R$, then $a\in P_W$ for $W=\spn T_a$ by \Cref{prop:LMW}. Conversely, if $a\in P_W$ with
 $\dim W\le 2$, then $\spn T_a\subseteq W$ and $D(a)=0$, so $a\in R$. Since $P_W$ depends only on the set
 $\{i:v_i\in W\}$, $W$ may be replaced by the span of the $v_i$ it contains.
@@ -255,7 +266,7 @@ contained in $J$.
 Let $a$ be a vertex of $Z_J$ with support $C$. If the vectors $(1,v_i)\in\R^{1+n}$, $i\in C$, were linearly dependent, a
 nonzero $y$ supported on $C$ with $\sum y_i=0$ and $\sum y_iv_i=0$ would give $a\pm\varepsilon y\in Z_J$ for small
 $\varepsilon>0$, contradicting that $a$ is a vertex. Hence these vectors are independent, and $|C|\le d+1$. If a proper
-subset $C'\subsetneq C$ carried a positive vanishing combination, its normalized law $a'$ would satisfy
+subset $C'\subsetneq C$ admitted a positive vanishing combination, its normalized law $a'$ would satisfy
 $\sum_{i\in C}(a_i-a'_i)(1,v_i)=0$ with $a-a'\neq 0$, again a dependence. So $C$ is a positive circuit and $a$ is its circuit
 law. The last assertion holds because a compact convex polytope is the convex hull of its vertices.
 \end{proof}
@@ -290,8 +301,8 @@ $a\in P_L$ forces $L$ to be balanced. (iv) follows from the last sentence of the
 \section{The recurrent set}\label{sec:rec}
 
 \begin{proof}[Proof of \Cref{thm:rec}]
-(i) Let $v_i=0$ and $a\in R$. For $0\le\lambda\le 1$ the law $(1-\lambda)a+\lambda e_i$ has drift $(1-\lambda)D(a)=0$
-and $\spn T_{(1-\lambda)a+\lambda e_i}\subseteq\spn T_a$, since adding the zero vector does not enlarge a span. By
+(i) Let $v_i=0$ and $a\in R$. For $0\le\lambda\le 1$ the law $(1-\lambda)a+\lambda \delta_i$ has drift $(1-\lambda)D(a)=0$
+and $\spn T_{(1-\lambda)a+\lambda \delta_i}\subseteq\spn T_a$, since adding the zero vector does not enlarge a span. By
 \Cref{prop:LMW} the whole segment lies in $R$.
 
 (ii) Assume no $v_i$ is zero. By \Cref{lem:pieces}(ii) and \Cref{lem:lines}(i),(iii), the sets $P_L$ $(L\in\mathcal B)$
@@ -323,8 +334,8 @@ vertex lies in one component: two line vertices $L,L'$ are joined through $L+L'$
 $\mathcal B(V)\neq\emptyset$ is adjacent to a line. This gives \eqref{eq:comp}, since a homotopy equivalence induces a
 bijection of path components. The component of $R$ that corresponds to an isolated vertex $V$ is $P_V$, which is convex.
 The component of $\Gamma$ containing the lines has $k+p$ vertices, where $p$ is the number of active planes with
-$\mathcal B(V)\neq\emptyset$, and $\sum_V|\mathcal B(V)|$ edges. A connected graph is homotopy equivalent to a wedge of
-$E-V+1$ circles and has free fundamental group of that rank \cite[Section~1.A]{Hatcher}, which gives \eqref{eq:rank}.
+$\mathcal B(V)\neq\emptyset$, and $\sum_V|\mathcal B(V)|$ edges. A connected graph with $n_0$ vertices and $n_1$ edges is homotopy equivalent to a
+wedge of $n_1-n_0+1$ circles and has free fundamental group of that rank \cite[Section~1.A]{Hatcher}, which gives \eqref{eq:rank}.
 \end{proof}
 
 \begin{proof}[Proof of \Cref{cor:rec-sc}]
@@ -334,8 +345,8 @@ $\Gamma$ connected, or $R$ is a
 single convex polytope $P_V$. It remains to show that, when $R$ is connected and $k>0$, the graph $\Gamma$ is a tree
 if and only if the balanced lines span at most two dimensions; a connected graph is simply connected if and only if it
 is a tree, and a tree is contractible \cite[Section~1.A]{Hatcher}. If the balanced lines span one dimension, then $k=1$
-and $\Gamma$ is a star. If they span a plane $V_0$, then $k\ge 2$, $V_0$ is active by \Cref{lem:lines}(iv), and $V_0$ is
-adjacent to every line vertex; any other active plane contains at most one balanced line, since two would span $V_0$, so it
+and $\Gamma$ is a star. If they span a plane $W_0$, then $k\ge 2$, $W_0$ is active by \Cref{lem:lines}(iv), and $W_0$ is
+adjacent to every line vertex; any other active plane contains at most one balanced line, since two would span $W_0$, so it
 is a leaf, and $\Gamma$ is a tree. If the balanced lines span at least three dimensions, choose linearly independent
 $L_1,L_2,L_3\in\mathcal B$. The planes $L_1+L_2$, $L_2+L_3$, $L_1+L_3$ are distinct and active, and
 $L_1,\ L_1+L_2,\ L_2,\ L_2+L_3,\ L_3,\ L_1+L_3$ is a cycle in $\Gamma$, so $\Gamma$ is not a tree.
@@ -346,8 +357,8 @@ of three projections $x,y,z$ spanning a plane $V$ gives the balanced line throug
 $R$ is path connected, which is \cite[Theorem~6.3]{LMW}.
 
 \begin{remark}\label{rem:minimal}
-Li, Mossel and Weiss state that their Example~6.4 is a minimal example of a disconnected $R$, with $n=3$ and $|S|=5$.
-This follows from \Cref{cor:rec-pc}: a disconnected $R$ needs at least five steps and $r\ge 3$. Indeed, by
+Li, Mossel and Weiss state that their Example~6.4 is a minimal example of a step set whose $R$ is not path connected, with $n=3$ and $|S|=5$.
+This follows from \Cref{cor:rec-pc}: if $R$ is not path connected, there are at least five steps and $r\ge 3$. Indeed, by
 \Cref{cor:rec-pc} no $v_i$ is zero and either $t\ge 2$, or $t\ge 1$ and $k\ge 1$. An active plane $V$ with
 $\mathcal B(V)=\emptyset$ contains a positive circuit of three steps by \Cref{lem:lines}(ii). If $L$ is a balanced line
 not in $V$, its two steps do not project into $V$, which gives five steps spanning three dimensions. If $U\neq V$ are two
@@ -361,7 +372,7 @@ least five steps, spanning $U+V$.
 If $r=0$, every $v_i$ is zero and $R=A$ by \Cref{prop:LMW}, so $R^c$ is empty. From now on in this section
 $r\ge 1$. Let $V_0=\spn\{v_i\}$, fix a linear isomorphism $V_0\cong\R^r$, let $w_i\in\R^r$ be
 the image of $v_i$, and let $\Phi$ be the $r\times m$ matrix with columns $w_i$, so that $D(a)=0$ if and only if $\Phi a=0$.
-When $0\in K$, the affine hull of $K$ is the linear space $V_0$, so in the centred cases the relative interior is the
+When $0\in K$, the affine hull of $K$ is the linear space $V_0$, so when $0\in K$ the relative interior of $K$ is its
 interior in $V_0$.
 
 \begin{lemma}\label{lem:sep}
@@ -387,8 +398,8 @@ real $m\times r$ matrix $B$ with $\one^{\mathsf T}B=0$ and $\Phi B=I_r$, where $
 
 \begin{proof}
 Suppose $0\in\relint K$. Then $0\in K$, so the affine hull of $K$ is $V_0$. For each $i$ with $v_i\neq 0$ choose
-$\delta_i>0$ with $-\delta_iv_i\in K$, write $-\delta_iv_i=D(b^{(i)})$ with $b^{(i)}\in A$, and put
-$q^{(i)}=(\delta_ie_i+b^{(i)})/(1+\delta_i)$; for $v_i=0$ put $q^{(i)}=e_i$. Each $q^{(i)}$ has zero drift and positive
+$\eta_i>0$ with $-\eta_iv_i\in K$, write $-\eta_iv_i=D(b^{(i)})$ with $b^{(i)}\in A$, and put
+$q^{(i)}=(\eta_i\delta_i+b^{(i)})/(1+\eta_i)$; for $v_i=0$ put $q^{(i)}=\delta_i$. Each $q^{(i)}$ has zero drift and positive
 $i$th coordinate, so their average $q$ has all coordinates positive and $\Phi q=0$.
 
 Conversely, let $q$ be as stated. Given $x\in\R^r$, choose $y\in\R^m$ with $\Phi y=x$, which is possible because the $w_i$
@@ -402,8 +413,8 @@ in $K$, that is, $0\in\relint K$.
 The case $r=0$ was settled at the start of this section.
 
 Let $r\ge 3$ and let $b\in A$ satisfy $\dim\spn T_b\ge 3$; the uniform law is one choice. For $a\in R^c$ consider the
-segment $H(a,\lambda)=(1-\lambda)a+\lambda b$, $0\le\lambda\le 1$. For $\lambda>0$ the support of $H(a,\lambda)$ contains
-the support of $b$, so $\dim\spn T_{H(a,\lambda)}\ge 3$ and $H(a,\lambda)\in R^c$ by \Cref{prop:LMW}, whatever the
+segment $h(a,\lambda)=(1-\lambda)a+\lambda b$, $0\le\lambda\le 1$. For $\lambda>0$ the support of $h(a,\lambda)$ contains
+the support of $b$, so $\dim\spn T_{h(a,\lambda)}\ge 3$ and $h(a,\lambda)\in R^c$ by \Cref{prop:LMW}, whatever the
 drift. Thus $R^c$ is star shaped about $b$.
 
 Let $1\le r\le 2$. Then $\dim\spn T_a\le 2$ for every $a$, and \Cref{prop:LMW} gives
@@ -412,10 +423,10 @@ R^c=\{a\in A:\ \Phi a\neq 0\}.
 \end{equation}
 If $0\notin\relint K$, take $\ell$ and $j$ from \Cref{lem:sep}. For $a\in R^c$ and $0<\lambda\le 1$,
 \[
-\ell\bigl(D((1-\lambda)a+\lambda e_j)\bigr)=(1-\lambda)\ell(D(a))+\lambda\ell(v_j)>0,
+\ell\bigl(D((1-\lambda)a+\lambda \delta_j)\bigr)=(1-\lambda)\ell(D(a))+\lambda\ell(v_j)>0,
 \]
-since $\ell(D(a))\ge 0$. By \eqref{eq:Tc} the segment from $a$ to $e_j$ lies in $R^c$, so $R^c$ is star shaped about
-$e_j$.
+since $\ell(D(a))\ge 0$. By \eqref{eq:Tc} the segment from $a$ to $\delta_j$ lies in $R^c$, so $R^c$ is star shaped about
+$\delta_j$.
 
 Finally let $0\in\relint K$, and take $q$ and $B$ from \Cref{lem:center}. Put
 \[
@@ -424,26 +435,26 @@ q_*=\min_iq_i>0,\qquad M=\max_i\sum_{j=1}^r|B_{ij}|,\qquad \varepsilon=\frac{q_*
 where $M>0$ because $\Phi B=I_r$. Let $\Sigma=\{u\in\R^r:\|u\|_\infty=1\}$, a sphere of dimension $r-1$, and
 $s(u)=q+\varepsilon Bu$. For $\|u\|_\infty\le 1$ the coordinates of $s(u)$ sum to one and satisfy
 \begin{equation}\label{eq:sphere}
-s_i(u)\ge q_i-\varepsilon M\ge q_*/2>0,\qquad \Phi s(u)=\varepsilon u .
+s(u)_i\ge q_i-\varepsilon M\ge q_*/2>0,\qquad \Phi s(u)=\varepsilon u .
 \end{equation}
 Hence $s(\Sigma)\subseteq R^c$, and $s$ maps $\Sigma$ homeomorphically onto its image, with inverse $a\mapsto \Phi a/\varepsilon$.
 For $a\in R^c$ define
 \[
-u(a)=\frac{\Phi a}{\|\Phi a\|_\infty},\qquad \rho(a)=s(u(a)),\qquad H(a,\lambda)=(1-\lambda)a+\lambda\rho(a),
+u(a)=\frac{\Phi a}{\|\Phi a\|_\infty},\qquad \rho(a)=s(u(a)),\qquad h(a,\lambda)=(1-\lambda)a+\lambda\rho(a),
 \]
-which are continuous on $R^c$ by \eqref{eq:Tc}. By convexity of $A$, $H(a,\lambda)\in A$, and
+which are continuous on $R^c$ by \eqref{eq:Tc}. By convexity of $A$, $h(a,\lambda)\in A$, and
 \[
-\Phi H(a,\lambda)=\bigl((1-\lambda)\|\Phi a\|_\infty+\lambda\varepsilon\bigr)u(a)\neq 0,
+\Phi h(a,\lambda)=\bigl((1-\lambda)\|\Phi a\|_\infty+\lambda\varepsilon\bigr)u(a)\neq 0,
 \]
-so $H$ stays in $R^c$. It is the identity at $\lambda=0$ and maps onto $s(\Sigma)$ at $\lambda=1$. If $a=s(u)$ with
-$u\in\Sigma$, then $\Phi a=\varepsilon u$, so $u(a)=u$ and $\rho(a)=a$, and $H(a,\lambda)=a$ for all $\lambda$. Thus $s(\Sigma)$
+so $h$ stays in $R^c$. It is the identity at $\lambda=0$ and maps onto $s(\Sigma)$ at $\lambda=1$. If $a=s(u)$ with
+$u\in\Sigma$, then $\Phi a=\varepsilon u$, so $u(a)=u$ and $\rho(a)=a$, and $h(a,\lambda)=a$ for all $\lambda$. Thus $s(\Sigma)$
 is a strong deformation retract of $R^c$; it is two points for $r=1$ and a circle for $r=2$. For $r=1$ write
 $w_i=c_i\in\R$: both signs occur, and by \eqref{eq:Tc} the set $R^c$ is the disjoint union of the nonempty convex open sets
 $\{\sum a_ic_i>0\}$ and $\{\sum a_ic_i<0\}$.
 \end{proof}
 
 \begin{proof}[Proof of \Cref{cor:trans}]
-By \Cref{thm:trans}, $R^c$ fails to be path connected only when $r=1$ and $0\in\relint K$. In rank one, $K$ is a segment
+By \Cref{thm:trans}, $R^c$ fails to be path connected only when $r=1$ and $0\in\relint K$. When $r=1$, $K$ is a segment
 on the line $V_0$, and $0$ lies in its relative interior exactly when nonzero projections occur on both sides of the
 origin. Part (ii) follows from the table, since two points are not path connected and $\pi_1$ of a circle is $\Z$
 \cite[Section~1.1]{Hatcher}.
@@ -457,7 +468,7 @@ situation of \cite[Theorem~6.9]{LMW}, and also when it does not: for $S=\{e_1,e_
 
 \begin{proof}[Proof of \Cref{thm:convex}]
 (c)$\Rightarrow$(b). A law in $A_Z$ has zero drift and $T_a\subseteq\{0\}$, so $A_Z\subseteq R$ by
-\Cref{prop:LMW}. Let $a\in R$ give positive mass to some index outside $Z$, and let $a'$
+\Cref{prop:LMW}. Let $a\in R\setminus A_Z$, and let $a'$
 be $a$ conditioned on the complement of $Z$. Since the steps with projection zero do not contribute to the drift, $D(a')=0$, and
 $\spn T_{a'}\subseteq\spn T_a$ has dimension at most two. By \Cref{lem:vertex} the polytope $Z_{\supp a'}$ has a vertex whose
 support is a positive circuit with at most three elements; it is not a single index because the projections on the
@@ -468,13 +479,10 @@ $Z=\{1,\dots,m\}$).
 
 (a)$\Rightarrow$(c). Suppose $C$ is a set of two or three indices outside $Z$ with $\sum_{i\in C}c_iv_i=0$, $c_i>0$. We may
 take $C$ minimal, so it is a positive circuit; let $q$ be its circuit law. Its support spans at most two dimensions, so
-$q\in R$. Fix $i\in C$ and let $b$ be $q$ conditioned on $C\setminus\{i\}$. The point mass $e_i$ has drift $v_i\neq 0$,
-and $b$ has drift $-q_iv_i/(1-q_i)\neq 0$, so both are transient, while $q=q_ie_i+(1-q_i)b$ is recurrent. Hence $R^c$
+$q\in R$. Fix $i\in C$ and let $b$ be $q$ conditioned on $C\setminus\{i\}$. The point mass $\delta_i$ has drift $v_i\neq 0$,
+and $b$ has drift $-q_iv_i/(1-q_i)\neq 0$, so both are transient, while $q=q_i\delta_i+(1-q_i)b$ is recurrent. Hence $R^c$
 is not convex.
 \end{proof}
-
-By \cite[Theorem~6.5]{LMW}, $R$ is convex if and only if one linear subspace of dimension at most $2$ contains
-$\spn T_a$ for every $a\in R$; by \Cref{thm:convex}, $R^c$ is convex if and only if $R=A_Z$.
 
 \section*{Acknowledgments and funding}
 
@@ -499,15 +507,15 @@ The author holds equity in Heights Labs and Convex Nexus Capital and has a manag
 The arguments of \Cref{sec:polytopes,sec:rec,sec:trans,sec:convex} were developed with AI systems (OpenAI Codex and
 Anthropic Claude agents working under the author's direction), which also drafted the text and wrote the script
 \texttt{check\_lmw.py}. They build on the work of Li, Mossel and Weiss \cite{LMW}: \Cref{prop:LMW} is the probabilistic
-input, the decomposition of $R$ into the polytopes $P_V$ comes from the proof of \cite[Theorem~6.2]{LMW}, and the
+input, the decomposition of $R$ into the polytopes $P_W$ comes from the proof of \cite[Theorem~6.2]{LMW}, and the
 questions answered here are theirs. The nerve theorem of Borsuk \cite{Borsuk} is used as cited. The author directed
 the work and is responsible for the content of the paper and for decisions concerning its dissemination.
 
 \section*{Data and code availability}
 
 The script \texttt{check\_lmw.py}, which evaluates \eqref{eq:comp}, \eqref{eq:rank} and the criteria of
-\Cref{thm:trans,thm:convex} on explicit step sets in exact rational arithmetic, is in release v1.0 of the repository
-\begin{center}\url{https://github.com/yspennstate/recurrent-transient-parameter-sets/tree/v1.0}.\end{center}
+\Cref{thm:trans,thm:convex} on explicit step sets in exact rational arithmetic, is in the repository
+\begin{center}\url{https://github.com/yspennstate/recurrent-transient-parameter-sets}.\end{center}
 
 \appendix
 \section{Notation}
@@ -518,17 +526,17 @@ The script \texttt{check\_lmw.py}, which evaluates \eqref{eq:comp}, \eqref{eq:ra
 Symbol & Meaning & First use\\[2pt]
 $G=\Z^n\times H$ & finitely generated abelian group, $H$ finite & \Cref{sec:intro}\\
 $S=\{s_1,\dots,s_m\}$ & finite step set & \Cref{sec:intro}\\
-$A$ & simplex of laws on $S$ & \Cref{sec:intro}\\
+$A$, $\delta_i$ & simplex of laws on $S$, point mass at $s_i$ & \Cref{sec:intro}\\
 $R$, $R^c$ & recurrent laws, transient laws & \Cref{sec:intro}\\
-$\pi$, $v_i$ & projection to $\Z^n$, projected steps & \Cref{sec:intro}\\
-$D(a)$, $T_a$ & drift, projected support of $a$ & \Cref{sec:intro}\\
+$\pi$, $v_i$ & projection to $\Z^n$, projections of the steps & \Cref{sec:intro}\\
+$D(a)$, $T_a$ & drift of $a$, set of the $v_i$ with $a_i>0$ & \Cref{sec:intro}\\
 $r$, $K$ & dimension of $\spn\{v_i\}$, convex hull of the $v_i$ & \Cref{sec:intro}\\
 $\mathcal B$, $k$ & balanced lines and their number & \Cref{thm:rec}\\
 $\mathcal V$, $\mathcal B(V)$, $t$ & active planes, balanced lines in $V$, number with $\mathcal B(V)=\emptyset$ & \Cref{thm:rec}\\
 $\Gamma$ & incidence graph of lines and planes & \Cref{thm:rec}\\
-$b$ & rank of $\pi_1$ of the central component $R_*$ & \Cref{thm:rec}\\
-$Z$, $A_Z$ & indices of zero steps, face of $A$ on them & \Cref{thm:convex}\\
-$P_W$, $Z_J$ & zero-drift laws on projections in $W$, on indices in $J$ & \Cref{sec:polytopes}\\
+$\beta$ & rank of $\pi_1(R_*)$ & \Cref{thm:rec}\\
+$Z$, $A_Z$ & indices of steps with projection zero, laws supported on them & \Cref{thm:convex}\\
+$P_W$, $Z_J$ & zero-drift laws supported on the indices with $v_i\in W$, on $J$ & \Cref{sec:intro}, \Cref{sec:polytopes}\\
 $V_0$, $w_i$, $\Phi$ & span of the $v_i$, coordinates in $\R^r$, matrix of the $w_i$ & \Cref{sec:trans}\\
 $q$, $B$, $\varepsilon$, $s(u)$ & data of the deformation retraction & \Cref{lem:center}, \Cref{thm:trans}\\
 \end{tabular}
