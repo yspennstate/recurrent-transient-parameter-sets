@@ -35,17 +35,15 @@ Givat Ram, Jerusalem, Israel}
 \maketitle
 
 \begin{abstract}
-Fix a finitely generated abelian group and a finite set $S$ of steps, and let $R$ be the set of laws on $S$, that is,
-probability vectors, whose homogeneous random walk is recurrent. Li, Mossel and Weiss characterized $R$ and asked when
-$R$ is simply connected and when its complement $R^c$ is path connected, simply connected or convex. When no step
-projects to zero in the free part of the group, $R$ is homotopy equivalent to a finite bipartite graph. Its vertices
-are the lines through the origin that contain projections of steps on both sides of the origin and the planes spanned
-by the projections of the steps in the support of some recurrent law, and its edges are the inclusions of a line in a
-plane. This gives the path components of $R$ and the ranks of their fundamental groups, and shows that $R$ is simply
-connected if and only if it is contractible. The complement $R^c$ is empty, contractible, homotopy equivalent to two
-points, or homotopy equivalent to a circle, according to the dimension of the span of the projections of the steps and
-whether the origin is in the relative interior of their convex hull. The set $R^c$ is convex exactly when no two or
-three nonzero projections of steps have a vanishing positive combination.
+Let $R$ be the set of laws, that is, probability vectors, on a finite set $S$ of steps in a finitely generated abelian
+group whose homogeneous random walk is recurrent. Li, Mossel and Weiss characterized $R$ and asked when $R$ is simply
+connected and when its complement $R^c$ is path connected, simply connected or convex. When no step projects to zero in
+the free part of the group, $R$ is homotopy equivalent to a finite bipartite graph whose vertices are certain lines and
+planes spanned by projections of steps. This gives the path components of $R$ and their fundamental groups, and $R$ is
+simply connected if and only if it is contractible. The complement $R^c$ is empty, contractible, homotopy equivalent to
+two points, or homotopy equivalent to a circle, according to the dimension of the span of the projections and whether
+the origin is in the relative interior of their convex hull. It is convex exactly when no two or three nonzero
+projections have a vanishing positive combination.
 \end{abstract}
 
 \noindent\textit{Keywords:} random walk, recurrence, abelian group, nerve theorem, homotopy type.\\
@@ -342,7 +340,7 @@ wedge of $n_1-n_0+1$ circles and has free fundamental group of that rank \cite[S
 A contractible space is simply connected. If some $v_i$ is zero, $R$ is contractible by \Cref{thm:rec}(i). Assume no
 $v_i$ is zero. A simply connected space is path connected, so \eqref{eq:comp} equals one. Then $R\simeq\Gamma$ with
 $\Gamma$ connected, or $R$ is a
-single convex polytope $P_V$. It remains to show that, when $R$ is connected and $k>0$, the graph $\Gamma$ is a tree
+single convex polytope $P_V$. It remains to show that, when $R$ is path connected and $k>0$, the graph $\Gamma$ is a tree
 if and only if the balanced lines span at most two dimensions; a connected graph is simply connected if and only if it
 is a tree, and a tree is contractible \cite[Section~1.A]{Hatcher}. If the balanced lines span one dimension, then $k=1$
 and $\Gamma$ is a star. If they span a plane $W_0$, then $k\ge 2$, $W_0$ is active by \Cref{lem:lines}(iv), and $W_0$ is
@@ -352,19 +350,24 @@ $L_1,L_2,L_3\in\mathcal B$. The planes $L_1+L_2$, $L_2+L_3$, $L_1+L_3$ are disti
 $L_1,\ L_1+L_2,\ L_2,\ L_2+L_3,\ L_3,\ L_1+L_3$ is a cycle in $\Gamma$, so $\Gamma$ is not a tree.
 \end{proof}
 
-If $S$ is symmetric, every positive circuit
-of three projections $x,y,z$ spanning a plane $V$ gives the balanced line through $x$ and $-x$ inside $V$, so $t=0$ and
-$R$ is path connected, which is \cite[Theorem~6.3]{LMW}.
+If $S$ is symmetric and no $v_i$ is zero, let $V$ be an active plane. By \Cref{lem:lines}(ii), $V$ contains two
+balanced lines or the projections of a positive circuit $C$ with three indices. In the second case pick $i\in C$; since
+$-s_i\in S$ and $\pi(-s_i)=-v_i\neq 0$, the line through $v_i$ is balanced and lies in $V$. Hence $t=0$, and $R$ is
+path connected by \Cref{cor:rec-pc}. If some $v_i$ is zero, $R$ is contractible by \Cref{thm:rec}(i). This recovers
+\cite[Theorem~6.3]{LMW}.
 
 \begin{remark}\label{rem:minimal}
 Li, Mossel and Weiss state that their Example~6.4 is a minimal example of a step set whose $R$ is not path connected, with $n=3$ and $|S|=5$.
 This follows from \Cref{cor:rec-pc}: if $R$ is not path connected, there are at least five steps and $r\ge 3$. Indeed, by
 \Cref{cor:rec-pc} no $v_i$ is zero and either $t\ge 2$, or $t\ge 1$ and $k\ge 1$. An active plane $V$ with
-$\mathcal B(V)=\emptyset$ contains a positive circuit of three steps by \Cref{lem:lines}(ii). If $L$ is a balanced line
-not in $V$, its two steps do not project into $V$, which gives five steps spanning three dimensions. If $U\neq V$ are two
-such planes, each circuit has at most one step on the line $U\cap V$ (two on one line would either be opposite, hence a
-smaller circuit, or force the third onto the same line), so the two circuits share at most one step; again there are at
-least five steps, spanning $U+V$.
+$\mathcal B(V)=\emptyset$ contains the projections of a positive circuit $C_V$ with three indices, by
+\Cref{lem:lines}(ii). If $L$ is a balanced line not contained in $V$, the two indices whose projections lie on $L$ on
+opposite sides of the origin are not in $C_V$. This gives five indices, hence five steps, whose projections span three
+dimensions. If $U\neq V$ are two such planes, with circuits $C_U$ and $C_V$, then at most one index of each circuit has
+its projection on the line $U\cap V$. Indeed, two such projections would either be negative multiples of each other,
+and then form a smaller positive circuit, or positive multiples of each other, and then the vanishing combination would
+put the third projection on the same line. So $C_U$ and $C_V$ share at most one index, and again there are at least
+five steps, whose projections span $U+V$.
 \end{remark}
 
 \section{The transient set}\label{sec:trans}
