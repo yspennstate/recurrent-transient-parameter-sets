@@ -113,7 +113,7 @@ P_U\cap P_W=P_{U\cap W}\qquad\text{for all subspaces } U,W\subseteq\R^n .
 Suppose no $v_i$ is zero. Then $P_{\{0\}}=\emptyset$, and for a line $L$ the polytope $P_L$ is nonempty exactly when
 $L$ contains two of the $v_i$ on opposite sides of the origin. Hence, for distinct subspaces $U,W$ of dimension at
 most $2$, the intersection $P_U\cap P_W$ is empty or is such a $P_L$. All nonempty intersections are convex, so the
-nerve theorem \cite{Borsuk,Bjorner2003} identifies $R$, up to homotopy, with the nerve of this cover, and the nerve
+nerve theorem \cite{Bjorner2003} identifies $R$, up to homotopy, with the nerve of this cover, and the nerve
 collapses onto the graph whose vertices are these lines and the two-dimensional subspaces of the form $\spn T_a$,
 $a\in R$, with an edge for each inclusion of a line in such a subspace (\Cref{thm:rec}). For $R^c$, let $1\le r\le 2$, so that
 $R^c=\{a\in A: D(a)\neq 0\}$ by \Cref{prop:LMW}, and suppose that some law with all coordinates positive has zero
@@ -286,7 +286,7 @@ size $3$ whose projections span $V$, or two distinct balanced lines.
 \end{lemma}
 
 \begin{proof}
-(i) No law has $T_a\subseteq\{0\}$, so $P_{\{0\}}=\emptyset$. Write the projections on $L$ as $c_iy$ with $y\neq 0$; a zero-drift law on them exists if
+(i) No law has $T_a\subseteq\{0\}$, so $P_{\{0\}}=\emptyset$. Write the projections on $L$ as $c_i\omega$ with $\omega\neq 0$; a zero-drift law on them exists if
 and only if both signs of $c_i$ occur.
 
 (ii) Let $a\in P_V$ with $\spn T_a=V$. By \Cref{lem:vertex} applied to $J=\supp a$, $a$ is a convex combination with
@@ -327,7 +327,7 @@ conditions on the coordinates $a_i$ and on the coordinates of $D(a)$ cut $A$ int
 CW complex in which every $P_W$ is a subcomplex. Call two members of the cover linked if they are joined by a chain
 of members in which consecutive ones meet. The unions of the classes of linked members are connected, pairwise
 disjoint and closed, so they are the path components of $R$, and they correspond to the components of $N$. The
-nerve theorem, which goes back to Borsuk \cite{Borsuk}, in the form of \cite[Theorem~6 and Remark~7]{Bjorner2003}
+nerve theorem of Borsuk, in the form of \cite[Theorem~6 and Remark~7]{Bjorner2003}
 for a connected regular CW complex covered by subcomplexes whose nonempty finite intersections are contractible,
 applies to each of them. Hence $R$ is homotopy equivalent to $N$; we write $\simeq$ for homotopy equivalence.
 
@@ -337,13 +337,13 @@ $\Delta_{L'}$. Remove the pairs $(\sigma,L*\sigma)$, for the faces $\sigma$ of $
 decreasing dimension. When $\sigma$ is removed, every face strictly containing it other than $L*\sigma$ has already been
 removed, so $\sigma$ is a free face of $L*\sigma$ and the removal is an elementary collapse. Doing this for every $L$
 leaves exactly the graph $\Gamma$. An elementary collapse is a deformation retraction, because a simplex deformation
-retracts onto the union of its faces other than one facet, so $R\simeq N\simeq\Gamma$.
+retracts onto the union of all its facets but one, so $R\simeq N\simeq\Gamma$.
 
 The graph $\Gamma$ has one isolated vertex for each active plane with $\mathcal B(V)=\emptyset$. If $k>0$, every other
 vertex lies in one path component: two line vertices $L,L'$ are joined through $L+L'$, and a plane vertex with
 $\mathcal B(V)\neq\emptyset$ is adjacent to a line. This gives \eqref{eq:comp}, since a homotopy equivalence induces a
 bijection of path components. The path component of $R$ that corresponds to an isolated vertex $V$ is $P_V$, since
-$P_V$ meets no other member of the cover, and $P_V$ is convex. The component of $\Gamma$ containing the lines has
+$P_V$ meets no other member of the cover, and $P_V$ is convex. The path component of $\Gamma$ containing the lines has
 $k+|\mathcal V|-t$ vertices and $\sum_V|\mathcal B(V)|$ edges. A connected graph with $n_0$ vertices and $n_1$ edges is homotopy equivalent to a
 wedge of $n_1-n_0+1$ circles and has free fundamental group of that rank \cite[Proposition~1A.2 and its proof]{Hatcher}, which gives \eqref{eq:rank}.
 \end{proof}
@@ -353,14 +353,15 @@ A contractible space is simply connected. If some $v_i$ is zero, $R$ is contract
 $v_i$ is zero. A simply connected space is path connected, so \eqref{eq:comp} equals one. Then $R\simeq\Gamma$ with
 $\Gamma$ connected, or $R$ is a
 single convex polytope $P_V$. It remains to show that, when $R$ is path connected and $k>0$, the graph $\Gamma$ is a tree
-if and only if the balanced lines span at most two dimensions; a connected graph is simply connected if and only if it
-is a tree, and a tree is contractible \cite[Section~1.A, Proposition~1A.2]{Hatcher}. If the balanced lines span one dimension, then $k=1$
+if and only if the balanced lines span at most two dimensions; here a tree is a finite connected graph containing no embedded circle, and for a
+finite connected graph, being simply connected, being contractible and being a tree are equivalent
+\cite[Section~1.A, Proposition~1A.2]{Hatcher}. If the balanced lines span one dimension, then $k=1$
 and $\Gamma$ is a star. If they span a plane $W_0$, then $k\ge 2$, $W_0$ is active by \Cref{lem:lines}(iv), and $W_0$ is
 adjacent to every line vertex; any other active plane contains at most one balanced line, since two would span $W_0$, so it
 is a leaf, and $\Gamma$ is a tree. If the balanced lines span at least three dimensions, choose linearly independent
 $L_1,L_2,L_3\in\mathcal B$. The planes $L_1+L_2$, $L_2+L_3$, $L_1+L_3$ are distinct and active, and
 $L_1,\ L_1+L_2,\ L_2,\ L_2+L_3,\ L_3,\ L_1+L_3$ is a closed path in $\Gamma$ without repeated vertices, so
-$\Gamma$ is not a tree.
+$\Gamma$ contains an embedded circle and is not a tree.
 \end{proof}
 
 If $S$ is symmetric and no $v_i$ is zero, let $V$ be an active plane. By \Cref{lem:lines}(ii), $V$ contains two
@@ -525,8 +526,8 @@ The arguments of \Cref{sec:polytopes,sec:rec,sec:trans,sec:convex} were develope
 Anthropic Claude agents), which also drafted the text and wrote the script
 \texttt{check\_lmw.py}. They build on the work of Li, Mossel and Weiss \cite{LMW}: \Cref{prop:LMW} is the probabilistic
 input, the decomposition of $R$ into the polytopes $P_W$ comes from the proof of \cite[Theorem~6.2]{LMW}, and the
-questions answered here are theirs. The topological step is the nerve theorem of Borsuk \cite{Borsuk}, in the
-form given by Bj\"orner \cite{Bjorner2003}. The author directed
+questions answered here are theirs. The topological step is the nerve theorem of Borsuk, in the form
+given by Bj\"orner \cite{Bjorner2003}. The author directed
 the work and is responsible for the content of the paper and for decisions concerning its dissemination.
 
 \section*{Data and code availability}
@@ -565,7 +566,7 @@ $N$, $\Delta_L$, $F_L$, $\sigma$ & nerve of the cover, its full simplices, the s
 $V_0$, $w_i$, $\Phi$ & span of the $v_i$, coordinates in $\R^r$, matrix of the $w_i$ & \Cref{sec:trans}\\
 $\ell$ & linear functional separating $K$ from the origin & \Cref{lem:sep}\\
 $\langle\cdot,\cdot\rangle$, $|\cdot|$, $\xi$ & standard inner product and norm of $\R^n$, unit normal & proof of \Cref{lem:sep}\\
-$z_\nu$, $p_\nu$ & points outside $K$ tending to $0$, the points of $K$ nearest to them & \Cref{sec:trans}\\
+$p$, $z_\nu$, $p_\nu$ & nearest point of $K$ to the origin; points outside $K$ tending to $0$, the points of $K$ nearest to them & proof of \Cref{lem:sep}\\
 $\one$, ${}^{\mathsf T}$, $I_r$ & all-ones vector in $\R^m$, transpose, identity matrix & \Cref{lem:center}\\
 $b$, $b^{(i)}$, $\eta_i$ & a law of $A$; laws with $D(b^{(i)})=-\eta_iv_i$ and the positive scalars $\eta_i$ & \Cref{thm:trans}, \Cref{lem:center}\\
 $h(a,\lambda)$, $\tilde h(a,\lambda)$ & the segments $(1-\lambda)a+\lambda b$ and $(1-\lambda)a+\lambda\rho(a)$ & proof of \Cref{thm:trans}\\
@@ -584,10 +585,6 @@ positive circuit, circuit law (\Cref{sec:polytopes}).
 \bibitem{Bjorner2003}
 A.~Bj\"orner, \emph{Nerves, fibers and homotopy groups}, J.\ Combin.\ Theory Ser.~A \textbf{102} (2003), 88--93.
 \doi{10.1016/S0097-3165(03)00015-3}.
-
-\bibitem{Borsuk}
-K.~Borsuk, \emph{On the imbedding of systems of compacta in simplicial complexes}, Fund.\ Math.\ \textbf{35} (1948),
-217--234. \doi{10.4064/fm-35-1-217-234}.
 
 \bibitem{Hatcher}
 A.~Hatcher, \emph{Algebraic Topology}, Cambridge University Press, Cambridge, 2002.
