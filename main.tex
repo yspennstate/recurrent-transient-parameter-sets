@@ -4,6 +4,7 @@
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{enumitem}
 \usepackage{booktabs}
+\usepackage{array}
 \usepackage{hyperref}
 \usepackage[nameinlink,noabbrev]{cleveref}
 
@@ -472,7 +473,7 @@ $\{\sum a_ic_i>0\}$ and $\{\sum a_ic_i<0\}$.
 
 \begin{proof}[Proof of \Cref{cor:trans}]
 By \Cref{thm:trans}, $R^c$ fails to be path connected only when $r=1$ and $0\in\relint K$. When $r=1$, $K$ is a segment
-on the line $V_0$, and $0$ lies in its relative interior exactly when nonzero projections occur on both sides of the
+on the line $V_0$, and $0$ lies in its relative interior exactly when nonzero projections occur on opposite sides of the
 origin. Part (ii) follows from the table, since two points are not path connected and $\pi_1$ of a circle is $\Z$
 \cite[Theorem~1.7]{Hatcher}.
 \end{proof}
@@ -577,7 +578,7 @@ $\mu$ & circuit law of a positive circuit & proof of \Cref{thm:convex}\\
 
 \begin{center}
 \small
-\begin{tabular}{@{}p{0.2\textwidth}p{0.5\textwidth}l@{}}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.2\textwidth}>{\raggedright\arraybackslash}p{0.5\textwidth}l@{}}
 Term & Meaning & Defined in\\[2pt]
 law & a point $a$ of $A$, a probability vector on $S$ & \Cref{sec:intro}\\
 drift & the vector $D(a)=\sum_ia_iv_i$ & \Cref{sec:intro}\\
@@ -605,7 +606,8 @@ A.~Hatcher, \emph{Algebraic Topology}, Cambridge University Press, Cambridge, 20
 
 \bibitem{LMW}
 R.~Li, E.~Mossel and B.~Weiss, \emph{Monotonicity, topology, and convexity of recurrence in random walks}, Ann.\ Appl.\
-Probab.\ \textbf{36} (2026), 4291--4310. \doi{10.1214/26-AAP2329}; arXiv:2403.04108.
+Probab.\ \textbf{36} (2026), 4291--4310. \doi{10.1214/26-AAP2329}; arXiv:2403.04108v4. Statement numbers
+are those of arXiv:2403.04108v4.
 
 \bibitem{MathBrainRepo}
 Y.~Shmalo, \emph{Math Brain: public snapshot, code and tests}, 2026.
