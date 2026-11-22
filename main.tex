@@ -346,23 +346,26 @@ $\mathcal B(V)\neq\emptyset$ is adjacent to a line. This gives \eqref{eq:comp}, 
 bijection of path components. The path component of $R$ that corresponds to an isolated vertex $V$ is $P_V$, since
 $P_V$ meets no other member of the cover, and $P_V$ is convex. The path component of $\Gamma$ containing the lines has
 $k+|\mathcal V|-t$ vertices and $\sum_V|\mathcal B(V)|$ edges. A connected graph with $n_0$ vertices and $n_1$ edges is homotopy equivalent to a
-wedge of $n_1-n_0+1$ circles and has free fundamental group of that rank \cite[Proposition~1A.2 and its proof]{Hatcher}, which gives \eqref{eq:rank}.
+wedge of $n_1-n_0+1$ circles and has free fundamental group of that rank \cite[Proposition~1A.2 and Exercise~1A.3]{Hatcher}, which gives \eqref{eq:rank}.
 \end{proof}
 
 \begin{proof}[Proof of \Cref{cor:rec-sc}]
 A contractible space is simply connected. If some $v_i$ is zero, $R$ is contractible by \Cref{thm:rec}(i). Assume no
 $v_i$ is zero. A simply connected space is path connected, so \eqref{eq:comp} equals one. Then $R\simeq\Gamma$ with
 $\Gamma$ connected, or $R$ is a
-single convex polytope $P_V$. Here a tree is a finite connected graph containing no embedded circle. For a finite connected graph, being simply
-connected, being contractible and being a tree are equivalent \cite[Section~1.A, Proposition~1A.2]{Hatcher}. It
-remains to show that, when $R$ is path connected and $k>0$, the graph $\Gamma$ is a tree if and only if the balanced
-lines span at most two dimensions. If the balanced lines span one dimension, then $k=1$
-and $\Gamma$ is a star. If they span a plane $W_0$, then $k\ge 2$, $W_0$ is active by \Cref{lem:lines}(iv), and $W_0$ is
+single convex polytope $P_V$. By the rank count in the proof of \Cref{thm:rec}, a connected graph with $n_0$ vertices
+and $n_1$ edges has $n_1\ge n_0-1$; it is simply connected if and only if $n_1=n_0-1$, and it is then homotopy
+equivalent to a point, that is, contractible. It remains to show that, when $R$ is path connected and $k>0$, the
+graph $\Gamma$ has $n_1=n_0-1$ if and only if the balanced lines span at most two dimensions. Since $R$ is path
+connected, $\Gamma$ has no isolated vertex. If the balanced lines span one dimension, then $k=1$, every active plane
+contains the single balanced line and is joined to it alone, and $n_1=n_0-1$. If they span a plane $W_0$, then $k\ge 2$, $W_0$ is active by \Cref{lem:lines}(iv), and $W_0$ is
 adjacent to every line vertex. Any other active plane contains at most one balanced line, since two would span $W_0$,
-so it is a leaf, and $\Gamma$ is a tree. If the balanced lines span at least three dimensions, choose linearly independent
+so it is joined to exactly one line vertex. With $l$ such planes, $n_0=1+k+l$ and $n_1=k+l$. If the balanced lines
+span at least three dimensions, choose linearly independent
 $L_1,L_2,L_3\in\mathcal B$. The planes $L_1+L_2$, $L_2+L_3$, $L_1+L_3$ are distinct and active. The sequence
-$L_1,\ L_1+L_2,\ L_2,\ L_2+L_3,\ L_3,\ L_1+L_3$ is a closed path in $\Gamma$ without repeated vertices, so
-$\Gamma$ contains an embedded circle and is not a tree.
+$L_1,\ L_1+L_2,\ L_2,\ L_2+L_3,\ L_3,\ L_1+L_3$ is a closed path in $\Gamma$ without repeated vertices. Deleting
+the edge between $L_1+L_3$ and $L_1$ leaves a connected graph with the same $n_0$ vertices, which therefore has at
+least $n_0-1$ edges. Hence $n_1\ge n_0$, and $\Gamma$ is not simply connected.
 \end{proof}
 
 If $S$ is symmetric and no $v_i$ is zero, let $V$ be an active plane. By \Cref{lem:lines}(ii), $V$ contains two
@@ -562,10 +565,25 @@ $R_*$, $\beta$ & path component of $R$ containing the $P_L$, rank of $\pi_1(R_*)
 $\simeq$ & homotopy equivalence & \Cref{sec:rec}\\
 $Z$, $A_Z$ & indices of steps with projection zero, laws supported on them & \Cref{thm:convex}\\
 $U$, $W$, $P_W$, $Q_J$ & linear subspaces, zero-drift laws supported on the indices with $v_i\in W$, on $J$ & \Cref{sec:intro}, \Cref{sec:polytopes}\\
-$C$, $c_i$ & positive circuit, its coefficients & \Cref{sec:polytopes}\\
+$C$, $c_i$ & positive circuit, its coefficients; in the proof of \Cref{lem:lines} the $c_i$ are coordinates on a line & \Cref{sec:polytopes}\\
+$c'$, $\lambda$ & a second coefficient vector for $C$ and the largest $\lambda$ with $c-\lambda c'\ge0$ & \Cref{sec:polytopes}\\
+$y$, $\theta$ & a dependence vector supported on $C$ and a small scalar; in the proof of \Cref{lem:center}, $y$ is a preimage under $\Phi$ & proof of \Cref{lem:vertex}\\
+$C'$, $a'$ & a proper subset of $C$ and normalized coefficients of a dependence; in the proof of \Cref{thm:convex}, $a'$ is $a$ conditioned on the complement of $Z$ & proof of \Cref{lem:vertex}\\
+$\omega$ & a nonzero vector on the line $L$ & proof of \Cref{lem:lines}\\
 $N$, $\Delta_L$, $F_L$, $\sigma$ & nerve of the cover, its full simplices, the simplex on the planes containing $L$, a face of $F_L$ & \Cref{sec:rec}\\
+$n_0$, $n_1$ & numbers of vertices and edges of a connected graph & proof of \Cref{thm:rec}\\
+$W_0$, $l$ & the plane spanned by the balanced lines, the number of other active planes & proof of \Cref{cor:rec-sc}\\
+\end{tabular}
+\end{center}
+
+\begin{center}
+\small
+\begin{tabular}{@{}lp{0.52\textwidth}l@{}}
+Symbol & Meaning & First use\\[2pt]
+$L_1$, $L_2$, $L_3$ & linearly independent balanced lines & proof of \Cref{cor:rec-sc}\\
 $V_0$, $w_i$, $\Phi$ & span of the $v_i$, coordinates in $\R^r$, matrix of the $w_i$ & \Cref{sec:trans}\\
 $\ell$ & linear functional separating $K$ from the origin & \Cref{lem:sep}\\
+$x$ & a point of $K$; in the proof of \Cref{lem:center}, a vector of $\R^r$ & proof of \Cref{lem:sep}\\
 $\langle\cdot,\cdot\rangle$, $|\cdot|$, $\xi$ & standard inner product and norm of $\R^n$, unit normal & proof of \Cref{lem:sep}\\
 $p$, $z_\nu$, $p_\nu$ & nearest point of $K$ to the origin; points outside $K$ tending to $0$, the points of $K$ nearest to them & proof of \Cref{lem:sep}\\
 $\one$, ${}^{\mathsf T}$, $I_r$ & all-ones vector in $\R^m$, transpose, identity matrix & \Cref{lem:center}\\
