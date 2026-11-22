@@ -433,24 +433,24 @@ $\delta_j$.
 
 Finally let $0\in\relint K$, and take $q$ and $B$ from \Cref{lem:center}. Put
 \[
-q_*=\min_iq_i>0,\qquad M=\max_i\sum_{j=1}^r|B_{ij}|,\qquad \varepsilon=\frac{q_*}{2M},
+q_*=\min_iq_i>0,\qquad \kappa=\max_i\sum_{j=1}^r|B_{ij}|,\qquad \varepsilon=\frac{q_*}{2\kappa},
 \]
-where $M>0$ because $\Phi B=I_r$. Let $\Sigma=\{u\in\R^r:\|u\|_\infty=1\}$, a sphere of dimension $r-1$, and
+where $\kappa>0$ because $\Phi B=I_r$. Let $\Sigma=\{u\in\R^r:\|u\|_\infty=1\}$, a sphere of dimension $r-1$, and
 $s(u)=q+\varepsilon Bu$. For $\|u\|_\infty\le 1$ the coordinates of $s(u)$ sum to one and satisfy
 \begin{equation}\label{eq:sphere}
-s(u)_i\ge q_i-\varepsilon M\ge q_*/2>0,\qquad \Phi s(u)=\varepsilon u .
+s(u)_i\ge q_i-\varepsilon\kappa\ge q_*/2>0,\qquad \Phi s(u)=\varepsilon u .
 \end{equation}
 Hence $s(\Sigma)\subseteq R^c$, and $s$ maps $\Sigma$ homeomorphically onto its image, with inverse $a\mapsto \Phi a/\varepsilon$.
 For $a\in R^c$ define
 \[
-u(a)=\frac{\Phi a}{\|\Phi a\|_\infty},\qquad \rho(a)=s(u(a)),\qquad h(a,\lambda)=(1-\lambda)a+\lambda\rho(a),
+u(a)=\frac{\Phi a}{\|\Phi a\|_\infty},\qquad \rho(a)=s(u(a)),\qquad \tilde h(a,\lambda)=(1-\lambda)a+\lambda\rho(a),
 \]
-which are continuous on $R^c$ by \eqref{eq:Tc}. By convexity of $A$, $h(a,\lambda)\in A$, and
+which are continuous on $R^c$ by \eqref{eq:Tc}. By convexity of $A$, $\tilde h(a,\lambda)\in A$, and
 \[
-\Phi h(a,\lambda)=\bigl((1-\lambda)\|\Phi a\|_\infty+\lambda\varepsilon\bigr)u(a)\neq 0,
+\Phi \tilde h(a,\lambda)=\bigl((1-\lambda)\|\Phi a\|_\infty+\lambda\varepsilon\bigr)u(a)\neq 0,
 \]
-so $h$ stays in $R^c$. It is the identity at $\lambda=0$ and maps onto $s(\Sigma)$ at $\lambda=1$. If $a=s(u)$ with
-$u\in\Sigma$, then $\Phi a=\varepsilon u$, so $u(a)=u$ and $\rho(a)=a$, and $h(a,\lambda)=a$ for all $\lambda$. Thus $s(\Sigma)$
+so $\tilde h$ stays in $R^c$. It is the identity at $\lambda=0$ and maps onto $s(\Sigma)$ at $\lambda=1$. If $a=s(u)$ with
+$u\in\Sigma$, then $\Phi a=\varepsilon u$, so $u(a)=u$ and $\rho(a)=a$, and $\tilde h(a,\lambda)=a$ for all $\lambda$. Thus $s(\Sigma)$
 is a strong deformation retract of $R^c$; it is two points for $r=1$ and a circle for $r=2$. For $r=1$ write
 $w_i=c_i\in\R$: both signs occur, and by \eqref{eq:Tc} the set $R^c$ is the disjoint union of the nonempty convex open sets
 $\{\sum a_ic_i>0\}$ and $\{\sum a_ic_i<0\}$.
@@ -550,8 +550,8 @@ $\ell$ & linear functional separating $K$ from the origin & \Cref{lem:sep}\\
 $z_\nu$, $p_\nu$ & points outside $K$ tending to $0$, the points of $K$ nearest to them & \Cref{sec:trans}\\
 $\one$, ${}^{\mathsf T}$, $I_r$ & all-ones vector in $\R^m$, transpose, identity matrix & \Cref{lem:center}\\
 $b$, $b^{(i)}$, $\eta_i$ & a law of $A$; laws with $D(b^{(i)})=-\eta_iv_i$ and the positive scalars $\eta_i$ & \Cref{thm:trans}, \Cref{lem:center}\\
-$h(a,\lambda)$ & the segment $(1-\lambda)a+\lambda b$ & proof of \Cref{thm:trans}\\
-$q$, $B$, $\varepsilon$, $s(u)$ & data of the deformation retraction & \Cref{lem:center}, \Cref{thm:trans}\\
+$h(a,\lambda)$, $\tilde h(a,\lambda)$ & the segments $(1-\lambda)a+\lambda b$ and $(1-\lambda)a+\lambda\rho(a)$ & proof of \Cref{thm:trans}\\
+$q$, $q_*$, $B$, $\kappa$, $\varepsilon$, $s(u)$ & data of the deformation retraction & \Cref{lem:center}, \Cref{thm:trans}\\
 \end{tabular}
 \end{center}
 
