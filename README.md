@@ -9,7 +9,7 @@ of the group, R is homotopy equivalent to a finite bipartite graph of lines and 
 steps, so it is simply connected only when it is contractible. The complement is empty, contractible, homotopy
 equivalent to two points, or homotopy equivalent to a circle, according to the rank of the projections and whether the
 origin is in the relative interior of their convex hull. It is convex exactly when no two or three nonzero projections
-of steps have a vanishing positive combination.
+of steps are positively dependent.
 
 - `main.tex`, `main.pdf`: the paper.
 - `check_lmw.py`: exact checks in rational arithmetic (standard library only). It compares the nerve of the cover of

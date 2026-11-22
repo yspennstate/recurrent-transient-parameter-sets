@@ -78,8 +78,8 @@ Li, Mossel and Weiss \cite[Section~6]{LMW} study the set $R\subseteq A$ of recur
 its complement $R^c=A\setminus R$, the \emph{transient set}. They prove that $R$ is closed \cite[Theorem~6.2]{LMW}, that $R$ is path
 connected when $S$ is symmetric \cite[Theorem~6.3]{LMW}, and they characterize convexity of $R$ \cite[Theorem~6.5,
 Corollary~6.6]{LMW}. On the transient side they show that $R^c$ is path connected when some transient law has zero
-drift \cite[Theorem~6.9, Corollary~6.10]{LMW}, observe that for $S=\{\pm e_1,\pm e_2\}\subseteq\Z^2$ the set $R^c$ is
-path connected but not simply connected, and show that $R^c$ is not convex for symmetric $S$ with a nonzero projection
+drift \cite[Theorem~6.9, Corollary~6.10]{LMW}. They observe that for $S=\{\pm e_1,\pm e_2\}\subseteq\Z^2$ the set
+$R^c$ is path connected but not simply connected, and they show that $R^c$ is not convex for symmetric $S$ with a nonzero projection
 \cite[Proposition~6.12]{LMW}. After their Example~6.4, a five-step set in $\Z^3$ with $R$ not path connected, they
 leave open the classification of path connectedness of $R$ for nonsymmetric $S$, and they pose:
 \begin{itemize}[nosep]
@@ -113,7 +113,7 @@ P_U\cap P_W=P_{U\cap W}\qquad\text{for all subspaces } U,W\subseteq\R^n .
 Suppose no $v_i$ is zero. Then $P_{\{0\}}=\emptyset$, and for a line $L$ the polytope $P_L$ is nonempty exactly when
 $L$ contains two of the $v_i$ on opposite sides of the origin. Hence, for distinct subspaces $U,W$ of dimension at
 most $2$, the intersection $P_U\cap P_W$ is empty or is such a $P_L$. All nonempty intersections are convex, so the
-nerve theorem \cite{Bjorner2003} identifies $R$, up to homotopy, with the nerve of this cover, and the nerve
+nerve theorem \cite{Bjorner2003} identifies $R$, up to homotopy, with the nerve of this cover. The nerve
 collapses onto the graph whose vertices are these lines and the two-dimensional subspaces of the form $\spn T_a$,
 $a\in R$, with an edge for each inclusion of a line in such a subspace (\Cref{thm:rec}). For $R^c$, let $1\le r\le 2$, so that
 $R^c=\{a\in A: D(a)\neq 0\}$ by \Cref{prop:LMW}, and suppose that some law with all coordinates positive has zero
@@ -169,8 +169,8 @@ This follows from \Cref{thm:rec} and \eqref{eq:comp}, and it is the classificati
 \cite[Example~6.4]{LMW}.
 
 For $S=\{\pm e_1,\dots,\pm e_d\}\subseteq\Z^d$ the balanced lines are the $d$ coordinate axes, the active planes are the
-$\binom d2$ coordinate planes, and \eqref{eq:rank} gives $\beta=1-d+\binom d2$: the set $R$ is homotopy equivalent to a
-wedge of $(d-1)(d-2)/2$ circles, a point for $d\le 2$ and a circle for $d=3$. Adding a step with projection zero makes
+$\binom d2$ coordinate planes, and \eqref{eq:rank} gives $\beta=1-d+\binom d2$. So the set $R$ is homotopy equivalent to
+a wedge of $(d-1)(d-2)/2$ circles, a point for $d\le 2$ and a circle for $d=3$. Adding a step with projection zero makes
 $R$ contractible.
 
 \subsection{Results on the transient set}
@@ -253,9 +253,9 @@ $\{i:v_i\in W\}$, $W$ may be replaced by the span of the $v_i$ it contains.
 
 A \emph{positive circuit} is a nonempty set $C$ of indices, minimal under inclusion among nonempty sets, for which
 $\sum_{i\in C}c_iv_i=0$ with all $c_i>0$. A single index with $v_i=0$ is a positive circuit. By minimality the coefficients are unique up to a positive
-factor: if $c'$ is a second choice not proportional to $c$, then $c-\lambda c'$, for the largest $\lambda>0$ with
-$c-\lambda c'\ge 0$, is nonzero and shows that the projections of a nonempty proper subset of $C$ are positively
-dependent. Normalizing the coefficients
+factor. Indeed, let $c'$ be a second choice not proportional to $c$, and let $\lambda>0$ be the largest number with
+$c-\lambda c'\ge 0$. Then $c-\lambda c'$ is nonzero and shows that the projections of a nonempty proper subset of
+$C$ are positively dependent. Normalizing the coefficients
 gives a law in $Q_C$, the \emph{circuit law} of $C$.
 
 \begin{lemma}\label{lem:vertex}
@@ -269,7 +269,7 @@ Let $a$ be a vertex of $Q_J$ with support $C$. If the vectors $(1,v_i)\in\R^{1+n
 nonzero $y$ supported on $C$ with $\sum y_i=0$ and $\sum y_iv_i=0$ would give $a\pm\theta y\in Q_J$ for small
 $\theta>0$, contradicting that $a$ is a vertex. Hence these vectors are independent; they lie in
 $\R\times\spn\{v_j:j\in J\}$, so $|C|\le 1+\dim\spn\{v_j:j\in J\}$. If the projections of a nonempty proper subset
-$C'\subsetneq C$ were positively dependent, the normalized law of a vanishing positive combination $a'$ would satisfy
+$C'\subsetneq C$ were positively dependent, the normalized coefficients $a'$ of such a dependence would satisfy
 $\sum_{i\in C}(a_i-a'_i)(1,v_i)=0$ with $a-a'\neq 0$, again a dependence. So $C$ is a positive circuit and $a$ is its circuit
 law. The last assertion holds because a compact convex polytope is the convex hull of its vertices.
 \end{proof}
@@ -312,7 +312,7 @@ and $\spn T_{(1-\lambda)a+\lambda \delta_i}\subseteq\spn T_a$, since adding the 
 and $P_V$ $(V\in\mathcal V)$ are nonempty and cover $R$. We determine which subfamilies have a common point, using
 \Cref{lem:pieces}(i) and \Cref{lem:lines}(i). For distinct balanced lines $P_L\cap P_M=P_{\{0\}}=\emptyset$. For a
 balanced line and an active plane, $P_L\cap P_V=P_L$ if $L\subseteq V$ and $P_L\cap P_V=P_{\{0\}}=\emptyset$ otherwise.
-Two or more distinct planes meet in a subspace of dimension at most one, so a family of two or more active planes has a
+Two or more distinct planes meet in a subspace of dimension at most one. So a family of two or more active planes has a
 common point exactly when all of them contain one balanced line $L$, and the common intersection is then $P_L$. Hence
 the nerve $N$ of the cover is the union of the full simplices
 \[
@@ -352,14 +352,14 @@ wedge of $n_1-n_0+1$ circles and has free fundamental group of that rank \cite[P
 A contractible space is simply connected. If some $v_i$ is zero, $R$ is contractible by \Cref{thm:rec}(i). Assume no
 $v_i$ is zero. A simply connected space is path connected, so \eqref{eq:comp} equals one. Then $R\simeq\Gamma$ with
 $\Gamma$ connected, or $R$ is a
-single convex polytope $P_V$. It remains to show that, when $R$ is path connected and $k>0$, the graph $\Gamma$ is a tree
-if and only if the balanced lines span at most two dimensions; here a tree is a finite connected graph containing no embedded circle, and for a
-finite connected graph, being simply connected, being contractible and being a tree are equivalent
-\cite[Section~1.A, Proposition~1A.2]{Hatcher}. If the balanced lines span one dimension, then $k=1$
+single convex polytope $P_V$. Here a tree is a finite connected graph containing no embedded circle. For a finite connected graph, being simply
+connected, being contractible and being a tree are equivalent \cite[Section~1.A, Proposition~1A.2]{Hatcher}. It
+remains to show that, when $R$ is path connected and $k>0$, the graph $\Gamma$ is a tree if and only if the balanced
+lines span at most two dimensions. If the balanced lines span one dimension, then $k=1$
 and $\Gamma$ is a star. If they span a plane $W_0$, then $k\ge 2$, $W_0$ is active by \Cref{lem:lines}(iv), and $W_0$ is
-adjacent to every line vertex; any other active plane contains at most one balanced line, since two would span $W_0$, so it
-is a leaf, and $\Gamma$ is a tree. If the balanced lines span at least three dimensions, choose linearly independent
-$L_1,L_2,L_3\in\mathcal B$. The planes $L_1+L_2$, $L_2+L_3$, $L_1+L_3$ are distinct and active, and
+adjacent to every line vertex. Any other active plane contains at most one balanced line, since two would span $W_0$,
+so it is a leaf, and $\Gamma$ is a tree. If the balanced lines span at least three dimensions, choose linearly independent
+$L_1,L_2,L_3\in\mathcal B$. The planes $L_1+L_2$, $L_2+L_3$, $L_1+L_3$ are distinct and active. The sequence
 $L_1,\ L_1+L_2,\ L_2,\ L_2+L_3,\ L_3,\ L_1+L_3$ is a closed path in $\Gamma$ without repeated vertices, so
 $\Gamma$ contains an embedded circle and is not a tree.
 \end{proof}
@@ -375,8 +375,8 @@ Li, Mossel and Weiss state that their Example~6.4 is a minimal example of a step
 This follows from \Cref{cor:rec-pc}: if $R$ is not path connected, there are at least five steps and $r\ge 3$. Indeed, by
 \Cref{cor:rec-pc} no $v_i$ is zero and either $t\ge 2$, or $t\ge 1$ and $k\ge 1$. An active plane $V$ with
 $\mathcal B(V)=\emptyset$ contains the projections of a positive circuit $C_V$ of size $3$, by
-\Cref{lem:lines}(ii). If $L$ is a balanced line not contained in $V$, the two indices whose projections lie on $L$ on
-opposite sides of the origin are not in $C_V$. This gives five indices, hence five steps, whose projections span three
+\Cref{lem:lines}(ii). If $L$ is a balanced line not contained in $V$, the two indices whose projections lie on $L$ and are
+negative multiples of each other are not in $C_V$. This gives five indices, hence five steps, whose projections span three
 dimensions. If $U\neq V$ are two such planes, with circuits $C_U$ and $C_V$, then at most one index of each circuit has
 its projection on the subspace $U\cap V$, which has dimension at most one. Indeed, two such projections would either
 be negative multiples of each other, and then form a smaller positive circuit, or positive multiples of each other,
@@ -575,10 +575,24 @@ $\mu$ & circuit law of a positive circuit & proof of \Cref{thm:convex}\\
 \end{tabular}
 \end{center}
 
-\noindent Terms, with the place of their definition: law, drift, support, supported on, symmetric, star shaped, star
-centre (\Cref{sec:intro}); recurrent set, transient set (\Cref{sec:intro}); balanced line, plane, active plane,
-incidence graph (\Cref{sec:intro}, before \Cref{thm:rec}); positively dependent (before \Cref{thm:convex});
-positive circuit, circuit law (\Cref{sec:polytopes}).
+\begin{center}
+\small
+\begin{tabular}{@{}p{0.2\textwidth}p{0.5\textwidth}l@{}}
+Term & Meaning & Defined in\\[2pt]
+law & a point $a$ of $A$, a probability vector on $S$ & \Cref{sec:intro}\\
+drift & the vector $D(a)=\sum_ia_iv_i$ & \Cref{sec:intro}\\
+support, supported on $J$ & $\supp a=\{i:a_i>0\}$; $\supp a\subseteq J$ & \Cref{sec:intro}\\
+symmetric & $S=-S$ & \Cref{sec:intro}\\
+star shaped, star centre & containing the segment from the centre to each point & \Cref{sec:intro}\\
+recurrent set, transient set & $R$, the recurrent laws; $R^c=A\setminus R$ & \Cref{sec:intro}\\
+balanced line & a line containing two projections on opposite sides of the origin & \Cref{sec:intro}\\
+plane, active plane & a two-dimensional subspace; one equal to $\spn T_a$ for some $a\in R$ & \Cref{sec:intro}\\
+incidence graph & the bipartite graph $\Gamma$ on balanced lines and active planes & \Cref{sec:intro}\\
+positively dependent & some combination with all coefficients positive vanishes & before \Cref{thm:convex}\\
+positive circuit & a minimal nonempty index set whose projections are positively dependent & \Cref{sec:polytopes}\\
+circuit law & the law in $Q_C$ given by the normalized coefficients of $C$ & \Cref{sec:polytopes}\\
+\end{tabular}
+\end{center}
 
 \begin{thebibliography}{99}
 
