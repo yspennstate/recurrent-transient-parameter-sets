@@ -507,6 +507,7 @@ The author holds equity in Heights Labs and Convex Nexus Capital and has a manag
 
 \section*{Declaration of generative AI and AI-assisted technologies}
 
+This paper is part of a broader research project on proving open problems with AI systems.
 The arguments of \Cref{sec:polytopes,sec:rec,sec:trans,sec:convex} were developed with AI systems (OpenAI Codex and
 Anthropic Claude agents working under the author's direction), which also drafted the text and wrote the script
 \texttt{check\_lmw.py}. They build on the work of Li, Mossel and Weiss \cite{LMW}: \Cref{prop:LMW} is the probabilistic
@@ -534,13 +535,22 @@ $R$, $R^c$ & recurrent laws, transient laws & \Cref{sec:intro}\\
 $\pi$, $v_i$ & projection to $\Z^n$, projections of the steps & \Cref{sec:intro}\\
 $D(a)$, $T_a$ & drift of $a$, set of the $v_i$ with $a_i>0$ & \Cref{sec:intro}\\
 $r$, $K$ & dimension of $\spn\{v_i\}$, convex hull of the $v_i$ & \Cref{sec:intro}\\
-$\mathcal B$, $k$ & balanced lines and their number & \Cref{thm:rec}\\
-$\mathcal V$, $\mathcal B(V)$, $t$ & active planes, balanced lines in $V$, number with $\mathcal B(V)=\emptyset$ & \Cref{thm:rec}\\
-$\Gamma$ & incidence graph of lines and planes & \Cref{thm:rec}\\
+$X$ & a star-shaped set & \Cref{sec:intro}\\
+$\Sigma$, $\rho$, $\lambda$ & unit sphere of the maximum norm, retraction of $R^c$, its homotopy parameter & \Cref{sec:intro}\\
+$L$, $M$, $\mathcal B$, $k$ & lines, balanced lines and their number & \Cref{sec:intro}, \Cref{sec:rec}\\
+$V$, $\mathcal V$, $\mathcal B(V)$, $t$ & a plane, active planes, balanced lines in $V$, number with $\mathcal B(V)=\emptyset$ & \Cref{sec:intro}\\
+$\Gamma$ & incidence graph of lines and planes & \Cref{sec:intro}\\
 $\beta$ & rank of $\pi_1(R_*)$ & \Cref{thm:rec}\\
 $Z$, $A_Z$ & indices of steps with projection zero, laws supported on them & \Cref{thm:convex}\\
-$P_W$, $Z_J$ & zero-drift laws supported on the indices with $v_i\in W$, on $J$ & \Cref{sec:intro}, \Cref{sec:polytopes}\\
+$U$, $W$, $P_W$, $Z_J$ & linear subspaces, zero-drift laws supported on the indices with $v_i\in W$, on $J$ & \Cref{sec:intro}, \Cref{sec:polytopes}\\
+$C$, $c_i$ & positive circuit, its coefficients & \Cref{sec:polytopes}\\
+$N$, $\Delta_L$, $F_L$, $\sigma$ & nerve of the cover, its full simplices, the simplex on the planes containing $L$, a face of $F_L$ & \Cref{sec:rec}\\
 $V_0$, $w_i$, $\Phi$ & span of the $v_i$, coordinates in $\R^r$, matrix of the $w_i$ & \Cref{sec:trans}\\
+$\ell$ & linear functional separating $K$ from the origin & \Cref{lem:sep}\\
+$z_\nu$, $p_\nu$ & points outside $K$ tending to $0$, the points of $K$ nearest to them & \Cref{sec:trans}\\
+$\one$, ${}^{\mathsf T}$, $I_r$ & all-ones vector in $\R^m$, transpose, identity matrix & \Cref{lem:center}\\
+$b$, $b^{(i)}$, $\eta_i$ & a law of $A$; laws with $D(b^{(i)})=-\eta_iv_i$ and the positive scalars $\eta_i$ & \Cref{thm:trans}, \Cref{lem:center}\\
+$h(a,\lambda)$ & the segment $(1-\lambda)a+\lambda b$ & proof of \Cref{thm:trans}\\
 $q$, $B$, $\varepsilon$, $s(u)$ & data of the deformation retraction & \Cref{lem:center}, \Cref{thm:trans}\\
 \end{tabular}
 \end{center}
