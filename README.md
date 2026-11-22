@@ -16,3 +16,5 @@ of steps are positively dependent.
   R by zero-drift polytopes with the component count and rank formula of Theorem 1.2, checks the certificates in the
   proof of Theorem 1.5 and the convexity criterion of Theorem 1.7 on seeded and random step sets, and confirms that
   no step set with at most four steps from {-1,0,1}^3 has a disconnected R. Run with `python check_lmw.py`.
+
+See `CREDITS.md` for the work this paper builds on.
