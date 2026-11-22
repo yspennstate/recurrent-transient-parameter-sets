@@ -6,6 +6,7 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{hyperref}
+\Urlmuskip=0mu plus 1mu
 \usepackage[nameinlink,noabbrev]{cleveref}
 
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,pdftitle={Topology of the recurrent and transient parameter sets of random walks on abelian groups},pdfauthor={Yitzchak Shmalo}}
@@ -403,7 +404,7 @@ $\ell(v_j)>0$ for some $j$.
 
 \begin{proof}
 Let $\langle\cdot,\cdot\rangle$ be the standard inner product of $\R^n$ and $|\cdot|$ its norm. If $0\notin K$, let $p$
-be the point of $K$ nearest to the origin; for $x\in K$ the function $\lambda\mapsto|p+\lambda(x-p)|^2$ is minimal at $\lambda=0$ on $[0,1]$, so $\langle p,x-p\rangle\ge 0$ and
+be the point of $K$ nearest to the origin; for $x\in K$ the function $\tau\mapsto|p+\tau(x-p)|^2$ is minimal at $\tau=0$ on $[0,1]$, so $\langle p,x-p\rangle\ge 0$ and
 $\langle p,x\rangle\ge|p|^2>0$. Take $\ell=\langle p,\cdot\rangle$. Otherwise $0$ lies on the relative boundary of $K$
 in $V_0$. Choose $z_\nu\in V_0\setminus K$ with $z_\nu\to 0$, let $p_\nu$ be the point of $K$ nearest to $z_\nu$, and
 $\xi_\nu=(p_\nu-z_\nu)/|p_\nu-z_\nu|$. As before $\langle \xi_\nu,x-p_\nu\rangle\ge 0$ for $x\in K$, and
@@ -500,8 +501,8 @@ $Z=\{1,\dots,m\}$).
 
 (a)$\Rightarrow$(c). Suppose $C$ is a set of two or three indices outside $Z$ with $\sum_{i\in C}c_iv_i=0$, $c_i>0$. We may
 take $C$ minimal, so it is a positive circuit; let $\mu$ be its circuit law. Its support spans at most two dimensions,
-so $\mu\in R$. Fix $i\in C$ and let $b$ be $\mu$ conditioned on $C\setminus\{i\}$. The point mass $\delta_i$ has drift $v_i\neq 0$,
-and $b$ has drift $-\mu_iv_i/(1-\mu_i)\neq 0$, so both are transient, while $\mu=\mu_i\delta_i+(1-\mu_i)b$ is recurrent. Hence $R^c$
+so $\mu\in R$. Fix $i\in C$ and let $\mu'$ be $\mu$ conditioned on $C\setminus\{i\}$. The point mass $\delta_i$ has drift $v_i\neq 0$,
+and $\mu'$ has drift $-\mu_iv_i/(1-\mu_i)\neq 0$, so both are transient, while $\mu=\mu_i\delta_i+(1-\mu_i)\mu'$ is recurrent. Hence $R^c$
 is not convex.
 \end{proof}
 
@@ -538,7 +539,7 @@ the work and is responsible for the content of the paper and for decisions conce
 
 The script \texttt{check\_lmw.py}, which evaluates \eqref{eq:comp}, \eqref{eq:rank} and the criteria of
 \Cref{thm:trans,thm:convex} on explicit step sets in exact rational arithmetic, is in the repository
-\begin{center}\url{https://github.com/yspennstate/recurrent-transient-parameter-sets}.\end{center}
+\begin{center}\url{https://github.com/yspennstate/recurrent-transient-parameter-sets/tree/v1.0}.\end{center}
 
 \appendix
 \section{Notation}
@@ -549,13 +550,16 @@ The script \texttt{check\_lmw.py}, which evaluates \eqref{eq:comp}, \eqref{eq:ra
 Symbol & Meaning & First use\\[2pt]
 $G=\Z^n\times H$ & finitely generated abelian group, $H$ finite & \Cref{sec:intro}\\
 $S=\{s_1,\dots,s_m\}$ & finite step set & \Cref{sec:intro}\\
+$m$ & number of steps & \Cref{sec:intro}\\
+$g$ & an element of $G$ & \Cref{sec:intro}\\
 $A$, $\delta_i$ & simplex of laws on $S$, point mass at $s_i$ & \Cref{sec:intro}\\
+$d$, $e_1,\dots,e_d$ & dimension and standard basis of $\Z^d$ in the examples & \Cref{sec:intro}\\
 $\supp a$ & support $\{i:a_i>0\}$ of a law & \Cref{sec:intro}\\
 $R$, $R^c$ & recurrent set, transient set & \Cref{sec:intro}\\
 $\pi$, $v_i$ & projection to $\Z^n$, projections of the steps & \Cref{sec:intro}\\
 $D(a)$, $T_a$ & drift of $a$, set of the $v_i$ with $a_i>0$ & \Cref{sec:intro}\\
 $r$, $K$ & dimension of $\spn\{v_i\}$, convex hull of the $v_i$ & \Cref{sec:intro}\\
-$X$ & a star-shaped set & \Cref{sec:intro}\\
+$X$, $c$ & a star-shaped set and a star centre of it; from \Cref{sec:polytopes} on, $c$ is the coefficient vector of a positive circuit & \Cref{sec:intro}\\
 $\|\cdot\|_\infty$, $\Sigma$ & maximum norm, its unit sphere & \Cref{sec:intro}\\
 $\varepsilon$, $\iota$, $\rho$, $\lambda$ & radius and embedding of $\Sigma$ in $R^c$, retraction of $R^c$, homotopy parameter & \Cref{sec:intro}\\
 $L$, $M$, $\mathcal B$, $k$ & lines, balanced lines and their number & \Cref{sec:intro}, \Cref{sec:rec}\\
@@ -583,6 +587,7 @@ Symbol & Meaning & First use\\[2pt]
 $L_1$, $L_2$, $L_3$ & linearly independent balanced lines & proof of \Cref{cor:rec-sc}\\
 $V_0$, $w_i$, $\Phi$ & span of the $v_i$, coordinates in $\R^r$, matrix of the $w_i$ & \Cref{sec:trans}\\
 $\ell$ & linear functional separating $K$ from the origin & \Cref{lem:sep}\\
+$\tau$ & a parameter in $[0,1]$ & proof of \Cref{lem:sep}\\
 $x$ & a point of $K$; in the proof of \Cref{lem:center}, a vector of $\R^r$ & proof of \Cref{lem:sep}\\
 $\langle\cdot,\cdot\rangle$, $|\cdot|$, $\xi$ & standard inner product and norm of $\R^n$, unit normal & proof of \Cref{lem:sep}\\
 $p$, $z_\nu$, $p_\nu$ & nearest point of $K$ to the origin; points outside $K$ tending to $0$, the points of $K$ nearest to them & proof of \Cref{lem:sep}\\
@@ -590,7 +595,7 @@ $\one$, ${}^{\mathsf T}$, $I_r$ & all-ones vector in $\R^m$, transpose, identity
 $b$, $b^{(i)}$, $\eta_i$ & a law of $A$; laws with $D(b^{(i)})=-\eta_iv_i$ and the positive scalars $\eta_i$ & \Cref{thm:trans}, \Cref{lem:center}\\
 $h(a,\lambda)$, $\tilde h(a,\lambda)$ & the segments $(1-\lambda)a+\lambda b$ and $(1-\lambda)a+\lambda\rho(a)$ & proof of \Cref{thm:trans}\\
 $q$, $q_*$, $B$, $\kappa$, $u(a)$ & data of the deformation retraction & \Cref{lem:center}, \Cref{thm:trans}\\
-$\mu$ & circuit law of a positive circuit & proof of \Cref{thm:convex}\\
+$\mu$, $\mu'$ & circuit law of a positive circuit, and $\mu$ conditioned on all but one index of it & proof of \Cref{thm:convex}\\
 \end{tabular}
 \end{center}
 
@@ -629,15 +634,15 @@ are those of arXiv:2403.04108v4.
 
 \bibitem{MathBrainRepo}
 Y.~Shmalo, \emph{Math Brain: public snapshot, code and tests}, 2026.
-\url{https://github.com/yspennstate/math-brain-public}
+\url{https://github.com/yspennstate/math-brain-public/tree/5427734deee9be643d6dfbdd5e7d4baeeefe4a4a}
 
 \bibitem{MathBrainPaper}
 Y.~Shmalo, \emph{Math Brain: shared, auditable memory for multi-agent mathematical research}, October 2026.
-\url{https://github.com/yspennstate/math-brain-public/tree/main/papers/math-brain-2026-10-24}
+\url{https://github.com/yspennstate/math-brain-public/tree/5427734deee9be643d6dfbdd5e7d4baeeefe4a4a/papers/math-brain-2026-10-24}
 
 \bibitem{BrainFramework}
 Y.~Shmalo, \emph{Brain Framework}, public software repository, 2026.
-\url{https://github.com/yspennstate/brain-framework-public}
+\url{https://github.com/yspennstate/brain-framework-public/tree/46b935d26d5a2893f7790b60466387dd8da47ef5}
 
 \end{thebibliography}
 
