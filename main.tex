@@ -43,7 +43,7 @@ planes spanned by projections of steps. This gives the path components of $R$ an
 simply connected if and only if it is contractible. The complement $R^c$ is empty, contractible, homotopy equivalent to
 two points, or homotopy equivalent to a circle, according to the dimension of the span of the projections and whether
 the origin is in the relative interior of their convex hull. It is convex exactly when no two or three nonzero
-projections have a vanishing positive combination.
+projections are positively dependent.
 \end{abstract}
 
 \noindent\textit{Keywords:} random walk, recurrence, abelian group, nerve theorem, homotopy type.\\
@@ -70,12 +70,12 @@ D(a)=\sum_{i=1}^m a_i v_i,\qquad T_a=\{v_i: a_i>0\},
 r=\dim\spn\{v_1,\dots,v_m\},\qquad K=\conv\{v_1,\dots,v_m\}.
 \]
 Distinct steps may have the same projection, and a projection may be zero. We call $D(a)$ the \emph{drift} of the law
-$a$, and say that $a$ has \emph{zero drift} if $D(a)=0$. A law $a$ is \emph{supported on} a set $J$ of indices if
-$a_i=0$ for $i\notin J$. The step set $S$ is \emph{symmetric} if $S=-S$. A set $X$ is \emph{star shaped} about a point
+$a$, and say that $a$ has \emph{zero drift} if $D(a)=0$. The \emph{support} of a law $a$ is $\supp a=\{i:a_i>0\}$, and $a$ is \emph{supported on} a set
+$J$ of indices if $\supp a\subseteq J$. The step set $S$ is \emph{symmetric} if $S=-S$. A set $X$ is \emph{star shaped} about a point
 $c\in X$ if it contains the segment from $c$ to each of its points; $c$ is then a \emph{star centre} of $X$.
 
-Li, Mossel and Weiss \cite[Section~6]{LMW} study the parameter set $R\subseteq A$ of recurrent laws and the parameter
-set $R^c=A\setminus R$ of transient ones. They prove that $R$ is closed \cite[Theorem~6.2]{LMW}, that $R$ is path
+Li, Mossel and Weiss \cite[Section~6]{LMW} study the set $R\subseteq A$ of recurrent laws, the \emph{recurrent set}, and
+its complement $R^c=A\setminus R$, the \emph{transient set}. They prove that $R$ is closed \cite[Theorem~6.2]{LMW}, that $R$ is path
 connected when $S$ is symmetric \cite[Theorem~6.3]{LMW}, and they characterize convexity of $R$ \cite[Theorem~6.5,
 Corollary~6.6]{LMW}. On the transient side they show that $R^c$ is path connected when some transient law has zero
 drift \cite[Theorem~6.9, Corollary~6.10]{LMW}, observe that for $S=\{\pm e_1,\pm e_2\}\subseteq\Z^2$ the set $R^c$ is
@@ -112,19 +112,19 @@ P_U\cap P_W=P_{U\cap W}\qquad\text{for all subspaces } U,W\subseteq\R^n .
 \]
 Suppose no $v_i$ is zero. Then $P_{\{0\}}=\emptyset$, and for a line $L$ the polytope $P_L$ is nonempty exactly when
 $L$ contains two of the $v_i$ on opposite sides of the origin. Hence, for distinct subspaces $U,W$ of dimension at
-most $2$, the intersection $P_U\cap P_W$ is empty or is such a $P_L$. All nonempty intersections are convex, and the
-nerve theorem identifies $R$, up to homotopy, with the graph whose vertices are these lines and the two-dimensional
-subspaces of the form $\spn T_a$, $a\in R$, with an edge for each inclusion of a line in such a subspace
-(\Cref{thm:rec}). For $R^c$, let $1\le r\le 2$, so that
+most $2$, the intersection $P_U\cap P_W$ is empty or is such a $P_L$. All nonempty intersections are convex, so the
+nerve theorem \cite{Borsuk,Bjorner2003} identifies $R$, up to homotopy, with the nerve of this cover, and the nerve
+collapses onto the graph whose vertices are these lines and the two-dimensional subspaces of the form $\spn T_a$,
+$a\in R$, with an edge for each inclusion of a line in such a subspace (\Cref{thm:rec}). For $R^c$, let $1\le r\le 2$, so that
 $R^c=\{a\in A: D(a)\neq 0\}$ by \Cref{prop:LMW}, and suppose that some law with all coordinates positive has zero
-drift. Fix a basis of $\spn\{v_1,\dots,v_m\}$, let $\|\cdot\|$ be the maximum norm in its coordinates and $\Sigma$
-the unit sphere of this norm. There are $\varepsilon>0$ and an embedding $s\colon\Sigma\to A$ with
-$D(s(u))=\varepsilon u$. Put $\rho(a)=s\bigl(D(a)/\|D(a)\|\bigr)$ for $a\in R^c$. Then
+drift. Fix a basis of $\spn\{v_1,\dots,v_m\}$, let $\|\cdot\|_\infty$ be the maximum norm in its coordinates and
+$\Sigma$ the unit sphere of this norm. There are $\varepsilon>0$ and an embedding $\iota\colon\Sigma\to A$ with
+$D(\iota(u))=\varepsilon u$. Put $\rho(a)=\iota\bigl(D(a)/\|D(a)\|_\infty\bigr)$ for $a\in R^c$. Then
 \[
-D\bigl((1-\lambda)a+\lambda\rho(a)\bigr)=\Bigl(1-\lambda+\frac{\lambda\varepsilon}{\|D(a)\|}\Bigr)D(a)\neq 0
+D\bigl((1-\lambda)a+\lambda\rho(a)\bigr)=\Bigl(1-\lambda+\frac{\lambda\varepsilon}{\|D(a)\|_\infty}\Bigr)D(a)\neq 0
 \qquad(0\le\lambda\le 1),
 \]
-so the segments from $a$ to $\rho(a)$ lie in $R^c$ and deform $R^c$ onto $s(\Sigma)$, which is a pair of points when
+so the segments from $a$ to $\rho(a)$ lie in $R^c$ and deform $R^c$ onto $\iota(\Sigma)$, which is a pair of points when
 $r=1$ and a circle when $r=2$ (\Cref{thm:trans}). In all other cases $R^c$ is empty or star shaped.
 
 We follow \cite{LMW} in
@@ -147,7 +147,7 @@ $\Gamma$ is the bipartite graph with vertex set $\mathcal B\cup\mathcal V$ and a
 \begin{equation}\label{eq:comp}
 t+\min(k,1)
 \end{equation}
-path components. For each active plane $V$ with $\mathcal B(V)=\emptyset$ the polytope $P_V$ is a convex component of $R$. If $k>0$, the remaining laws form one component $R_*$, whose
+path components. For each active plane $V$ with $\mathcal B(V)=\emptyset$ the polytope $P_V$ is a convex path component of $R$. If $k>0$, the remaining laws form one path component $R_*$, whose
 fundamental group is free of rank
 \begin{equation}\label{eq:rank}
 \beta=1-k+\sum_{V\in\mathcal V,\ \mathcal B(V)\neq\emptyset}\bigl(|\mathcal B(V)|-1\bigr).
@@ -185,8 +185,8 @@ Case & $R^c$\\
 $r=0$ & empty\\
 $r\ge 3$ & contractible; every law $b$ with $\dim\spn T_b\ge 3$ is a star centre\\
 $1\le r\le 2$ and $0\notin\relint K$ & contractible; some point mass $\delta_j$ is a star centre\\
-$r=1$ and $0\in\relint K$ & two convex components\\
-$r=2$ and $0\in\relint K$ & strong deformation retract onto an embedded circle\\
+$r=1$ and $0\in\relint K$ & two convex path components\\
+$r=2$ and $0\in\relint K$ & contains an embedded circle as a strong deformation retract\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -209,14 +209,17 @@ The condition $0\in\relint K$ holds exactly when some law with all coordinates p
 homotopy type of a circle. Membership of $0$ in $K$ is not enough: for $(-1,0),(1,0),(0,1)$ the origin lies on an edge
 of $K$ and $R^c$ is contractible.
 
+A set of vectors is \emph{positively dependent} if some linear combination of them with all coefficients positive
+is zero.
+
 \begin{theorem}[Question~6.13]\label{thm:convex}
 Let $Z=\{i:v_i=0\}$ and let $A_Z=\{a\in A:\supp a\subseteq Z\}$, with $A_Z=\emptyset$ when $Z=\emptyset$. The following
 are equivalent.
 \begin{enumerate}[label=\textup{(\alph*)},nosep]
 \item $R^c$ is convex.
 \item $R=A_Z$.
-\item No two or three of the nonzero projections $v_i$ $(i\notin Z)$, with distinct indices, have a vanishing linear
-combination with positive coefficients.
+\item No two or three of the nonzero projections $v_i$ $(i\notin Z)$, with distinct indices, are positively
+dependent.
 \end{enumerate}
 \end{theorem}
 
@@ -230,8 +233,8 @@ of $R$ by them, \Cref{sec:trans} treats $R^c$ by cases on $r$ and on the positio
 
 \section{Zero-drift polytopes}\label{sec:polytopes}
 
-Recall the polytopes $P_W$ defined in the introduction. For an index set $J\subseteq\{1,\dots,m\}$ put $Z_J=\{a\in A:\ \supp a\subseteq J,\ D(a)=0\}$. Each of these sets is a
-compact convex polytope, possibly empty.
+For an index set $J\subseteq\{1,\dots,m\}$ put $Q_J=\{a\in A:\ \supp a\subseteq J,\ D(a)=0\}$, so that
+$P_W=Q_J$ for $J=\{i:v_i\in W\}$. Each of these sets is a compact convex polytope, possibly empty.
 
 \begin{lemma}\label{lem:pieces}
 \begin{enumerate}[label=\textup{(\roman*)},nosep]
@@ -248,23 +251,25 @@ $\dim W\le 2$, then $\spn T_a\subseteq W$ and $D(a)=0$, so $a\in R$. Since $P_W$
 $\{i:v_i\in W\}$, $W$ may be replaced by the span of the $v_i$ it contains.
 \end{proof}
 
-A \emph{positive circuit} is a set $C$ of indices, minimal under inclusion, for which $\sum_{i\in C}c_iv_i=0$ with all
-$c_i>0$. A single index with $v_i=0$ is a positive circuit. By minimality the coefficients are unique up to a positive
+A \emph{positive circuit} is a nonempty set $C$ of indices, minimal under inclusion among nonempty sets, for which
+$\sum_{i\in C}c_iv_i=0$ with all $c_i>0$. A single index with $v_i=0$ is a positive circuit. By minimality the coefficients are unique up to a positive
 factor: if $c'$ is a second choice not proportional to $c$, then $c-\lambda c'$, for the largest $\lambda>0$ with
-$c-\lambda c'\ge 0$, is a nonzero positive vanishing combination on a proper subset of $C$. Normalizing the coefficients
-gives a law in $Z_C$, the \emph{circuit law} of $C$.
+$c-\lambda c'\ge 0$, is nonzero and shows that the projections of a nonempty proper subset of $C$ are positively
+dependent. Normalizing the coefficients
+gives a law in $Q_C$, the \emph{circuit law} of $C$.
 
 \begin{lemma}\label{lem:vertex}
-Let $J$ be an index set and $d=\dim\spn\{v_j:j\in J\}$. The support of every vertex of $Z_J$ is a positive circuit with
-at most $d+1$ elements, and every point of $Z_J$ is a convex combination of the circuit laws of positive circuits
+Let $J$ be an index set. The support of every vertex of $Q_J$ is a positive circuit of size at most
+$1+\dim\spn\{v_j:j\in J\}$, and every point of $Q_J$ is a convex combination of the circuit laws of positive circuits
 contained in $J$.
 \end{lemma}
 
 \begin{proof}
-Let $a$ be a vertex of $Z_J$ with support $C$. If the vectors $(1,v_i)\in\R^{1+n}$, $i\in C$, were linearly dependent, a
-nonzero $y$ supported on $C$ with $\sum y_i=0$ and $\sum y_iv_i=0$ would give $a\pm\varepsilon y\in Z_J$ for small
-$\varepsilon>0$, contradicting that $a$ is a vertex. Hence these vectors are independent, and $|C|\le d+1$. If a proper
-subset $C'\subsetneq C$ admitted a positive vanishing combination, its normalized law $a'$ would satisfy
+Let $a$ be a vertex of $Q_J$ with support $C$. If the vectors $(1,v_i)\in\R^{1+n}$, $i\in C$, were linearly dependent, a
+nonzero $y$ supported on $C$ with $\sum y_i=0$ and $\sum y_iv_i=0$ would give $a\pm\theta y\in Q_J$ for small
+$\theta>0$, contradicting that $a$ is a vertex. Hence these vectors are independent; they lie in
+$\R\times\spn\{v_j:j\in J\}$, so $|C|\le 1+\dim\spn\{v_j:j\in J\}$. If the projections of a nonempty proper subset
+$C'\subsetneq C$ were positively dependent, the normalized law of a vanishing positive combination $a'$ would satisfy
 $\sum_{i\in C}(a_i-a'_i)(1,v_i)=0$ with $a-a'\neq 0$, again a dependence. So $C$ is a positive circuit and $a$ is its circuit
 law. The last assertion holds because a compact convex polytope is the convex hull of its vertices.
 \end{proof}
@@ -273,22 +278,22 @@ law. The last assertion holds because a compact convex polytope is the convex hu
 Suppose no $v_i$ is zero.
 \begin{enumerate}[label=\textup{(\roman*)},nosep]
 \item $P_{\{0\}}=\emptyset$, and for a line $L$ the polytope $P_L$ is nonempty if and only if $L$ is balanced.
-\item A plane $V$ is active if and only if it contains the projections $v_i$, $i\in C$, of a positive circuit $C$ with
-three elements whose projections span $V$, or two distinct balanced lines.
+\item A plane $V$ is active if and only if it contains the projections $v_i$, $i\in C$, of a positive circuit $C$ of
+size $3$ whose projections span $V$, or two distinct balanced lines.
 \item If a plane $V$ is not active, then $P_V=\bigcup_{L\in\mathcal B(V)}P_L$.
 \item If $L,L'$ are distinct balanced lines, the plane $L+L'$ is active.
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-(i) No law has $T_a\subseteq\{0\}$, so $P_{\{0\}}=\emptyset$. Write the projections on $L$ as $c_iu$ with $u\neq 0$; a zero-drift law on them exists if
+(i) No law has $T_a\subseteq\{0\}$, so $P_{\{0\}}=\emptyset$. Write the projections on $L$ as $c_iy$ with $y\neq 0$; a zero-drift law on them exists if
 and only if both signs of $c_i$ occur.
 
 (ii) Let $a\in P_V$ with $\spn T_a=V$. By \Cref{lem:vertex} applied to $J=\supp a$, $a$ is a convex combination with
 positive weights of circuit laws of positive circuits in $\supp a$, of size at most $3$, whose union is $\supp a$. A
-positive circuit of size $3$ cannot lie on a line, since among three collinear nonzero vectors with a positive vanishing
-combination two point in opposite directions and already form a positive circuit. Positive circuits of size $2$ are
-pairs of opposite vectors and lie on balanced lines. If no circuit has size $3$ and all circuits lie on one line, then
+positive circuit of size $3$ cannot lie on a line, since among three positively dependent collinear nonzero vectors two are
+negative multiples of each other and already form a positive circuit. Positive circuits of size $2$ are pairs of
+projections that are negative multiples of each other, and they lie on balanced lines. If no circuit has size $3$ and all circuits lie on one line, then
 $\spn T_a$ is that line, a contradiction. Conversely, a circuit law of three projections spanning $V$ lies in $P_V$ and
 has $\spn T_a=V$, and so does the midpoint of laws in $P_L$ and $P_{L'}$ for distinct balanced lines $L,L'\subseteq V$.
 
@@ -317,23 +322,30 @@ together with one isolated vertex for every active plane $V$ with $\mathcal B(V)
 $\Delta_L\cap\Delta_{L'}$ is the single vertex $L+L'$, which is active by \Cref{lem:lines}(iv): a common face can contain
 only planes containing both lines.
 
-All members of the cover and all their nonempty intersections are compact convex sets, hence contractible. By the
-nerve theorem for finite closed convex covers \cite{Borsuk,Bjorner}, $R$ is homotopy equivalent to $N$.
+All members of the cover and all their nonempty intersections are compact convex sets, hence contractible. The sign
+conditions on the coordinates $a_i$ and on the coordinates of $D(a)$ cut $A$ into a polytopal complex, a regular
+CW complex in which every $P_W$ is a subcomplex. Call two members of the cover linked if they are joined by a chain
+of members in which consecutive ones meet. The unions of the classes of linked members are connected, pairwise
+disjoint and closed, so they are the path components of $R$, and they correspond to the components of $N$. The
+nerve theorem, which goes back to Borsuk \cite{Borsuk}, in the form of \cite[Theorem~6 and Remark~7]{Bjorner2003}
+for a connected regular CW complex covered by subcomplexes whose nonempty finite intersections are contractible,
+applies to each of them. Hence $R$ is homotopy equivalent to $N$; we write $\simeq$ for homotopy equivalence.
 
 Write $\Delta_L=L*F_L$ for the cone with apex $L$ over $F_L$, the simplex on the planes containing $L$. A face $\sigma$ of $F_L$ of dimension
 at least one contains two planes, whose intersection is $L$, so neither $\sigma$ nor $L*\sigma$ lies in any other
 $\Delta_{L'}$. Remove the pairs $(\sigma,L*\sigma)$, for the faces $\sigma$ of $F_L$ of dimension at least one, in order of
 decreasing dimension. When $\sigma$ is removed, every face strictly containing it other than $L*\sigma$ has already been
 removed, so $\sigma$ is a free face of $L*\sigma$ and the removal is an elementary collapse. Doing this for every $L$
-leaves exactly the graph $\Gamma$. Collapses preserve homotopy type, so $R\simeq N\simeq\Gamma$.
+leaves exactly the graph $\Gamma$. An elementary collapse is a deformation retraction, because a simplex deformation
+retracts onto the union of its faces other than one facet, so $R\simeq N\simeq\Gamma$.
 
 The graph $\Gamma$ has one isolated vertex for each active plane with $\mathcal B(V)=\emptyset$. If $k>0$, every other
-vertex lies in one component: two line vertices $L,L'$ are joined through $L+L'$, and a plane vertex with
+vertex lies in one path component: two line vertices $L,L'$ are joined through $L+L'$, and a plane vertex with
 $\mathcal B(V)\neq\emptyset$ is adjacent to a line. This gives \eqref{eq:comp}, since a homotopy equivalence induces a
-bijection of path components. The component of $R$ that corresponds to an isolated vertex $V$ is $P_V$, which is convex.
-The component of $\Gamma$ containing the lines has $k+p$ vertices, where $p$ is the number of active planes with
-$\mathcal B(V)\neq\emptyset$, and $\sum_V|\mathcal B(V)|$ edges. A connected graph with $n_0$ vertices and $n_1$ edges is homotopy equivalent to a
-wedge of $n_1-n_0+1$ circles and has free fundamental group of that rank \cite[Section~1.A]{Hatcher}, which gives \eqref{eq:rank}.
+bijection of path components. The path component of $R$ that corresponds to an isolated vertex $V$ is $P_V$, since
+$P_V$ meets no other member of the cover, and $P_V$ is convex. The component of $\Gamma$ containing the lines has
+$k+|\mathcal V|-t$ vertices and $\sum_V|\mathcal B(V)|$ edges. A connected graph with $n_0$ vertices and $n_1$ edges is homotopy equivalent to a
+wedge of $n_1-n_0+1$ circles and has free fundamental group of that rank \cite[Proposition~1A.2 and its proof]{Hatcher}, which gives \eqref{eq:rank}.
 \end{proof}
 
 \begin{proof}[Proof of \Cref{cor:rec-sc}]
@@ -342,16 +354,17 @@ $v_i$ is zero. A simply connected space is path connected, so \eqref{eq:comp} eq
 $\Gamma$ connected, or $R$ is a
 single convex polytope $P_V$. It remains to show that, when $R$ is path connected and $k>0$, the graph $\Gamma$ is a tree
 if and only if the balanced lines span at most two dimensions; a connected graph is simply connected if and only if it
-is a tree, and a tree is contractible \cite[Section~1.A]{Hatcher}. If the balanced lines span one dimension, then $k=1$
+is a tree, and a tree is contractible \cite[Section~1.A, Proposition~1A.2]{Hatcher}. If the balanced lines span one dimension, then $k=1$
 and $\Gamma$ is a star. If they span a plane $W_0$, then $k\ge 2$, $W_0$ is active by \Cref{lem:lines}(iv), and $W_0$ is
 adjacent to every line vertex; any other active plane contains at most one balanced line, since two would span $W_0$, so it
 is a leaf, and $\Gamma$ is a tree. If the balanced lines span at least three dimensions, choose linearly independent
 $L_1,L_2,L_3\in\mathcal B$. The planes $L_1+L_2$, $L_2+L_3$, $L_1+L_3$ are distinct and active, and
-$L_1,\ L_1+L_2,\ L_2,\ L_2+L_3,\ L_3,\ L_1+L_3$ is a cycle in $\Gamma$, so $\Gamma$ is not a tree.
+$L_1,\ L_1+L_2,\ L_2,\ L_2+L_3,\ L_3,\ L_1+L_3$ is a closed path in $\Gamma$ without repeated vertices, so
+$\Gamma$ is not a tree.
 \end{proof}
 
 If $S$ is symmetric and no $v_i$ is zero, let $V$ be an active plane. By \Cref{lem:lines}(ii), $V$ contains two
-balanced lines or the projections of a positive circuit $C$ with three indices. In the second case pick $i\in C$; since
+balanced lines or the projections of a positive circuit $C$ of size $3$. In the second case pick $i\in C$; since
 $-s_i\in S$ and $\pi(-s_i)=-v_i\neq 0$, the line through $v_i$ is balanced and lies in $V$. Hence $t=0$, and $R$ is
 path connected by \Cref{cor:rec-pc}. If some $v_i$ is zero, $R$ is contractible by \Cref{thm:rec}(i). This recovers
 \cite[Theorem~6.3]{LMW}.
@@ -360,13 +373,13 @@ path connected by \Cref{cor:rec-pc}. If some $v_i$ is zero, $R$ is contractible 
 Li, Mossel and Weiss state that their Example~6.4 is a minimal example of a step set whose $R$ is not path connected, with $n=3$ and $|S|=5$.
 This follows from \Cref{cor:rec-pc}: if $R$ is not path connected, there are at least five steps and $r\ge 3$. Indeed, by
 \Cref{cor:rec-pc} no $v_i$ is zero and either $t\ge 2$, or $t\ge 1$ and $k\ge 1$. An active plane $V$ with
-$\mathcal B(V)=\emptyset$ contains the projections of a positive circuit $C_V$ with three indices, by
+$\mathcal B(V)=\emptyset$ contains the projections of a positive circuit $C_V$ of size $3$, by
 \Cref{lem:lines}(ii). If $L$ is a balanced line not contained in $V$, the two indices whose projections lie on $L$ on
 opposite sides of the origin are not in $C_V$. This gives five indices, hence five steps, whose projections span three
 dimensions. If $U\neq V$ are two such planes, with circuits $C_U$ and $C_V$, then at most one index of each circuit has
-its projection on the line $U\cap V$. Indeed, two such projections would either be negative multiples of each other,
-and then form a smaller positive circuit, or positive multiples of each other, and then the vanishing combination would
-put the third projection on the same line. So $C_U$ and $C_V$ share at most one index, and again there are at least
+its projection on the subspace $U\cap V$, which has dimension at most one. Indeed, two such projections would either
+be negative multiples of each other, and then form a smaller positive circuit, or positive multiples of each other,
+and then the positive dependence would put the third projection on the same line. So $C_U$ and $C_V$ share at most one index, and again there are at least
 five steps, whose projections span $U+V$.
 \end{remark}
 
@@ -384,13 +397,13 @@ $\ell(v_j)>0$ for some $j$.
 \end{lemma}
 
 \begin{proof}
-If $0\notin K$, let $p$ be the point of $K$ nearest to the origin; for $x\in K$ the function
-$\lambda\mapsto\|p+\lambda(x-p)\|^2$ is minimal at $\lambda=0$ on $[0,1]$, so $\langle p,x-p\rangle\ge 0$ and
-$\langle p,x\rangle\ge\|p\|^2>0$. Take $\ell=\langle p,\cdot\rangle$. Otherwise $0$ lies on the relative boundary of $K$
+Let $\langle\cdot,\cdot\rangle$ be the standard inner product of $\R^n$ and $|\cdot|$ its norm. If $0\notin K$, let $p$
+be the point of $K$ nearest to the origin; for $x\in K$ the function $\lambda\mapsto|p+\lambda(x-p)|^2$ is minimal at $\lambda=0$ on $[0,1]$, so $\langle p,x-p\rangle\ge 0$ and
+$\langle p,x\rangle\ge|p|^2>0$. Take $\ell=\langle p,\cdot\rangle$. Otherwise $0$ lies on the relative boundary of $K$
 in $V_0$. Choose $z_\nu\in V_0\setminus K$ with $z_\nu\to 0$, let $p_\nu$ be the point of $K$ nearest to $z_\nu$, and
-$u_\nu=(p_\nu-z_\nu)/\|p_\nu-z_\nu\|$. As before $\langle u_\nu,x-p_\nu\rangle\ge 0$ for $x\in K$, and
-$\|p_\nu\|\le 2\|z_\nu\|\to 0$. A subsequence of $u_\nu$ converges to a unit vector $u\in V_0$ with
-$\langle u,x\rangle\ge 0$ on $K$; take $\ell=\langle u,\cdot\rangle$. In both cases $\ell\neq 0$ on $V_0$, and since the
+$\xi_\nu=(p_\nu-z_\nu)/|p_\nu-z_\nu|$. As before $\langle \xi_\nu,x-p_\nu\rangle\ge 0$ for $x\in K$, and
+$|p_\nu|\le 2|z_\nu|\to 0$. A subsequence of $\xi_\nu$ converges to a unit vector $\xi\in V_0$ with
+$\langle \xi,x\rangle\ge 0$ on $K$; take $\ell=\langle \xi,\cdot\rangle$. In both cases $\ell\neq 0$ on $V_0$, and since the
 $v_i$ span $V_0$ some $\ell(v_j)$ is nonzero, hence positive.
 \end{proof}
 
@@ -436,21 +449,21 @@ Finally let $0\in\relint K$, and take $q$ and $B$ from \Cref{lem:center}. Put
 q_*=\min_iq_i>0,\qquad \kappa=\max_i\sum_{j=1}^r|B_{ij}|,\qquad \varepsilon=\frac{q_*}{2\kappa},
 \]
 where $\kappa>0$ because $\Phi B=I_r$. Let $\Sigma=\{u\in\R^r:\|u\|_\infty=1\}$, a sphere of dimension $r-1$, and
-$s(u)=q+\varepsilon Bu$. For $\|u\|_\infty\le 1$ the coordinates of $s(u)$ sum to one and satisfy
+$\iota(u)=q+\varepsilon Bu$. For $\|u\|_\infty\le 1$ the coordinates of $\iota(u)$ sum to one and satisfy
 \begin{equation}\label{eq:sphere}
-s(u)_i\ge q_i-\varepsilon\kappa\ge q_*/2>0,\qquad \Phi s(u)=\varepsilon u .
+\iota(u)_i\ge q_i-\varepsilon\kappa\ge q_*/2>0,\qquad \Phi \iota(u)=\varepsilon u .
 \end{equation}
-Hence $s(\Sigma)\subseteq R^c$, and $s$ maps $\Sigma$ homeomorphically onto its image, with inverse $a\mapsto \Phi a/\varepsilon$.
+Hence $\iota(\Sigma)\subseteq R^c$, and $\iota$ maps $\Sigma$ homeomorphically onto its image, with inverse $a\mapsto \Phi a/\varepsilon$.
 For $a\in R^c$ define
 \[
-u(a)=\frac{\Phi a}{\|\Phi a\|_\infty},\qquad \rho(a)=s(u(a)),\qquad \tilde h(a,\lambda)=(1-\lambda)a+\lambda\rho(a),
+u(a)=\frac{\Phi a}{\|\Phi a\|_\infty},\qquad \rho(a)=\iota(u(a)),\qquad \tilde h(a,\lambda)=(1-\lambda)a+\lambda\rho(a),
 \]
 which are continuous on $R^c$ by \eqref{eq:Tc}. By convexity of $A$, $\tilde h(a,\lambda)\in A$, and
 \[
 \Phi \tilde h(a,\lambda)=\bigl((1-\lambda)\|\Phi a\|_\infty+\lambda\varepsilon\bigr)u(a)\neq 0,
 \]
-so $\tilde h$ stays in $R^c$. It is the identity at $\lambda=0$ and maps onto $s(\Sigma)$ at $\lambda=1$. If $a=s(u)$ with
-$u\in\Sigma$, then $\Phi a=\varepsilon u$, so $u(a)=u$ and $\rho(a)=a$, and $\tilde h(a,\lambda)=a$ for all $\lambda$. Thus $s(\Sigma)$
+so $\tilde h$ stays in $R^c$. It is the identity at $\lambda=0$ and maps onto $\iota(\Sigma)$ at $\lambda=1$. If $a=\iota(u)$ with
+$u\in\Sigma$, then $\Phi a=\varepsilon u$, so $u(a)=u$ and $\rho(a)=a$, and $\tilde h(a,\lambda)=a$ for all $\lambda$. Thus $\iota(\Sigma)$
 is a strong deformation retract of $R^c$; it is two points for $r=1$ and a circle for $r=2$. For $r=1$ write
 $w_i=c_i\in\R$: both signs occur, and by \eqref{eq:Tc} the set $R^c$ is the disjoint union of the nonempty convex open sets
 $\{\sum a_ic_i>0\}$ and $\{\sum a_ic_i<0\}$.
@@ -460,7 +473,7 @@ $\{\sum a_ic_i>0\}$ and $\{\sum a_ic_i<0\}$.
 By \Cref{thm:trans}, $R^c$ fails to be path connected only when $r=1$ and $0\in\relint K$. When $r=1$, $K$ is a segment
 on the line $V_0$, and $0$ lies in its relative interior exactly when nonzero projections occur on both sides of the
 origin. Part (ii) follows from the table, since two points are not path connected and $\pi_1$ of a circle is $\Z$
-\cite[Section~1.1]{Hatcher}.
+\cite[Theorem~1.7]{Hatcher}.
 \end{proof}
 
 For $S=\{\pm e_1,\pm e_2\}$ the origin is the centre of the square $K$, so $R^c$ deformation retracts onto a circle, in
@@ -473,17 +486,17 @@ situation of \cite[Theorem~6.9]{LMW}, and also when it does not: for $S=\{e_1,e_
 (c)$\Rightarrow$(b). A law in $A_Z$ has zero drift and $T_a\subseteq\{0\}$, so $A_Z\subseteq R$ by
 \Cref{prop:LMW}. Let $a\in R\setminus A_Z$, and let $a'$
 be $a$ conditioned on the complement of $Z$. Since the steps with projection zero do not contribute to the drift, $D(a')=0$, and
-$\spn T_{a'}\subseteq\spn T_a$ has dimension at most two. By \Cref{lem:vertex} the polytope $Z_{\supp a'}$ has a vertex whose
-support is a positive circuit with at most three elements; it is not a single index because the projections on the
+$\spn T_{a'}\subseteq\spn T_a$ has dimension at most two. By \Cref{lem:vertex} the polytope $Q_{\supp a'}$ has a vertex whose
+support is a positive circuit of size at most $3$; it is not a single index because the projections on the
 support of $a'$ are nonzero. This contradicts (c), so $R=A_Z$.
 
 (b)$\Rightarrow$(a). If $R=A_Z$, then $R^c=\{a\in A:\sum_{i\notin Z}a_i>0\}$, which is convex (and empty if
 $Z=\{1,\dots,m\}$).
 
 (a)$\Rightarrow$(c). Suppose $C$ is a set of two or three indices outside $Z$ with $\sum_{i\in C}c_iv_i=0$, $c_i>0$. We may
-take $C$ minimal, so it is a positive circuit; let $q$ be its circuit law. Its support spans at most two dimensions, so
-$q\in R$. Fix $i\in C$ and let $b$ be $q$ conditioned on $C\setminus\{i\}$. The point mass $\delta_i$ has drift $v_i\neq 0$,
-and $b$ has drift $-q_iv_i/(1-q_i)\neq 0$, so both are transient, while $q=q_i\delta_i+(1-q_i)b$ is recurrent. Hence $R^c$
+take $C$ minimal, so it is a positive circuit; let $\mu$ be its circuit law. Its support spans at most two dimensions,
+so $\mu\in R$. Fix $i\in C$ and let $b$ be $\mu$ conditioned on $C\setminus\{i\}$. The point mass $\delta_i$ has drift $v_i\neq 0$,
+and $b$ has drift $-\mu_iv_i/(1-\mu_i)\neq 0$, so both are transient, while $\mu=\mu_i\delta_i+(1-\mu_i)b$ is recurrent. Hence $R^c$
 is not convex.
 \end{proof}
 
@@ -509,10 +522,11 @@ The author holds equity in Heights Labs and Convex Nexus Capital and has a manag
 
 This paper is part of a broader research project on proving open problems with AI systems.
 The arguments of \Cref{sec:polytopes,sec:rec,sec:trans,sec:convex} were developed with AI systems (OpenAI Codex and
-Anthropic Claude agents working under the author's direction), which also drafted the text and wrote the script
+Anthropic Claude agents), which also drafted the text and wrote the script
 \texttt{check\_lmw.py}. They build on the work of Li, Mossel and Weiss \cite{LMW}: \Cref{prop:LMW} is the probabilistic
 input, the decomposition of $R$ into the polytopes $P_W$ comes from the proof of \cite[Theorem~6.2]{LMW}, and the
-questions answered here are theirs. The nerve theorem of Borsuk \cite{Borsuk} is used as cited. The author directed
+questions answered here are theirs. The topological step is the nerve theorem of Borsuk \cite{Borsuk}, in the
+form given by Bj\"orner \cite{Bjorner2003}. The author directed
 the work and is responsible for the content of the paper and for decisions concerning its dissemination.
 
 \section*{Data and code availability}
@@ -531,35 +545,45 @@ Symbol & Meaning & First use\\[2pt]
 $G=\Z^n\times H$ & finitely generated abelian group, $H$ finite & \Cref{sec:intro}\\
 $S=\{s_1,\dots,s_m\}$ & finite step set & \Cref{sec:intro}\\
 $A$, $\delta_i$ & simplex of laws on $S$, point mass at $s_i$ & \Cref{sec:intro}\\
-$R$, $R^c$ & recurrent laws, transient laws & \Cref{sec:intro}\\
+$\supp a$ & support $\{i:a_i>0\}$ of a law & \Cref{sec:intro}\\
+$R$, $R^c$ & recurrent set, transient set & \Cref{sec:intro}\\
 $\pi$, $v_i$ & projection to $\Z^n$, projections of the steps & \Cref{sec:intro}\\
 $D(a)$, $T_a$ & drift of $a$, set of the $v_i$ with $a_i>0$ & \Cref{sec:intro}\\
 $r$, $K$ & dimension of $\spn\{v_i\}$, convex hull of the $v_i$ & \Cref{sec:intro}\\
 $X$ & a star-shaped set & \Cref{sec:intro}\\
-$\Sigma$, $\rho$, $\lambda$ & unit sphere of the maximum norm, retraction of $R^c$, its homotopy parameter & \Cref{sec:intro}\\
+$\|\cdot\|_\infty$, $\Sigma$ & maximum norm, its unit sphere & \Cref{sec:intro}\\
+$\varepsilon$, $\iota$, $\rho$, $\lambda$ & radius and embedding of $\Sigma$ in $R^c$, retraction of $R^c$, homotopy parameter & \Cref{sec:intro}\\
 $L$, $M$, $\mathcal B$, $k$ & lines, balanced lines and their number & \Cref{sec:intro}, \Cref{sec:rec}\\
 $V$, $\mathcal V$, $\mathcal B(V)$, $t$ & a plane, active planes, balanced lines in $V$, number with $\mathcal B(V)=\emptyset$ & \Cref{sec:intro}\\
 $\Gamma$ & incidence graph of lines and planes & \Cref{sec:intro}\\
-$\beta$ & rank of $\pi_1(R_*)$ & \Cref{thm:rec}\\
+$R_*$, $\beta$ & path component of $R$ containing the $P_L$, rank of $\pi_1(R_*)$ & \Cref{thm:rec}\\
+$\simeq$ & homotopy equivalence & \Cref{sec:rec}\\
 $Z$, $A_Z$ & indices of steps with projection zero, laws supported on them & \Cref{thm:convex}\\
-$U$, $W$, $P_W$, $Z_J$ & linear subspaces, zero-drift laws supported on the indices with $v_i\in W$, on $J$ & \Cref{sec:intro}, \Cref{sec:polytopes}\\
+$U$, $W$, $P_W$, $Q_J$ & linear subspaces, zero-drift laws supported on the indices with $v_i\in W$, on $J$ & \Cref{sec:intro}, \Cref{sec:polytopes}\\
 $C$, $c_i$ & positive circuit, its coefficients & \Cref{sec:polytopes}\\
 $N$, $\Delta_L$, $F_L$, $\sigma$ & nerve of the cover, its full simplices, the simplex on the planes containing $L$, a face of $F_L$ & \Cref{sec:rec}\\
 $V_0$, $w_i$, $\Phi$ & span of the $v_i$, coordinates in $\R^r$, matrix of the $w_i$ & \Cref{sec:trans}\\
 $\ell$ & linear functional separating $K$ from the origin & \Cref{lem:sep}\\
+$\langle\cdot,\cdot\rangle$, $|\cdot|$, $\xi$ & standard inner product and norm of $\R^n$, unit normal & proof of \Cref{lem:sep}\\
 $z_\nu$, $p_\nu$ & points outside $K$ tending to $0$, the points of $K$ nearest to them & \Cref{sec:trans}\\
 $\one$, ${}^{\mathsf T}$, $I_r$ & all-ones vector in $\R^m$, transpose, identity matrix & \Cref{lem:center}\\
 $b$, $b^{(i)}$, $\eta_i$ & a law of $A$; laws with $D(b^{(i)})=-\eta_iv_i$ and the positive scalars $\eta_i$ & \Cref{thm:trans}, \Cref{lem:center}\\
 $h(a,\lambda)$, $\tilde h(a,\lambda)$ & the segments $(1-\lambda)a+\lambda b$ and $(1-\lambda)a+\lambda\rho(a)$ & proof of \Cref{thm:trans}\\
-$q$, $q_*$, $B$, $\kappa$, $\varepsilon$, $s(u)$ & data of the deformation retraction & \Cref{lem:center}, \Cref{thm:trans}\\
+$q$, $q_*$, $B$, $\kappa$, $u(a)$ & data of the deformation retraction & \Cref{lem:center}, \Cref{thm:trans}\\
+$\mu$ & circuit law of a positive circuit & proof of \Cref{thm:convex}\\
 \end{tabular}
 \end{center}
 
+\noindent Terms, with the place of their definition: law, drift, support, supported on, symmetric, star shaped, star
+centre (\Cref{sec:intro}); recurrent set, transient set (\Cref{sec:intro}); balanced line, plane, active plane,
+incidence graph (\Cref{sec:intro}, before \Cref{thm:rec}); positively dependent (before \Cref{thm:convex});
+positive circuit, circuit law (\Cref{sec:polytopes}).
+
 \begin{thebibliography}{99}
 
-\bibitem{Bjorner}
-A.~Bj\"orner, \emph{Topological methods}, in: Handbook of Combinatorics, Vol.~II, Elsevier, Amsterdam, 1995,
-1819--1872.
+\bibitem{Bjorner2003}
+A.~Bj\"orner, \emph{Nerves, fibers and homotopy groups}, J.\ Combin.\ Theory Ser.~A \textbf{102} (2003), 88--93.
+\doi{10.1016/S0097-3165(03)00015-3}.
 
 \bibitem{Borsuk}
 K.~Borsuk, \emph{On the imbedding of systems of compacta in simplicial complexes}, Fund.\ Math.\ \textbf{35} (1948),
