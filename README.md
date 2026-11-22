@@ -2,6 +2,8 @@
 
 Yitzchak Shmalo
 
+DOI: [10.5281/zenodo.24449616](https://doi.org/10.5281/zenodo.24449616) (all versions); version 1.0: [10.5281/zenodo.24449617](https://doi.org/10.5281/zenodo.24449617)
+
 Fix a finitely generated abelian group and a finite set S of steps, and let R be the set of probability vectors on S
 whose homogeneous random walk is recurrent. Li, Mossel and Weiss characterized R and asked when R is simply connected
 and when its complement is path connected, simply connected or convex. When no step projects to zero in the free part
